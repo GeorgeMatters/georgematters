@@ -13,7 +13,6 @@
 }
 
 
-
 .home-section .home-slide {
     position: absolute;
     top: 0;
@@ -67,6 +66,7 @@
 
 
 
+
 .button {
     display: inline-block;
     text-decoration: none;
@@ -84,4 +84,28 @@
 .button:focus {
     background-color: #7a5040;
     color: #ffffff;
+}
+
+
+.home-slide.active {
+    display: block;
+}
+
+.home-section .home-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensure images cover the slide area */
+    background-position: center; /* Center images within the slide */
+    opacity: 0; /* Start with slides fully transparent */
+    transition: opacity 1s ease-in-out; /* Smooth transition for the slides */
+    z-index: 1; /* Positioned below the overlay text */
+    display: block; /* Change to block */
+}
+
+.home-section .home-slide.active {
+    opacity: 1; /* Fully opaque when active */
+    z-index: 2; /* Above the other slides */
 }
