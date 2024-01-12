@@ -1,0 +1,55 @@
+.social-media-section {
+    background-color: #f5f1ec; /* Beige background color from the logo */
+    color: #3D2B1F; /* Dark Brown Text */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-media-section .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
+
+.social-media-section h3 {
+    color: #7a5040; /* Dark Brown Text */
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+
+}
+
+.social-icons {
+    font-size: 4em; /* Size of the icons */
+    margin-top: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 60px;
+    color: #3D2B1F; /* Deep Rust */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    color: #8B4513; /* Darker shade for hover/focus state */
+}
+
+/* Icon Styling (if not using a font library) */
+.fab {
+    /* Example style if not using FontAwesome, replace with actual content if needed */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Responsive adjustments as needed */
+@media (max-width: 768px) {
+    .social-icons {
+        font-size: 1.5em; /* Smaller icons for mobile */
+    }
+}

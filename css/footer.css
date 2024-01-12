@@ -1,0 +1,93 @@
+.site-footer {
+    border-top: 2px solid #D2B48C;
+    background-color: #f5f1ec;/*#f9ecdb; Light background similar to the header */
+    color: #7a5040; /* Dark text color from the logo */
+    padding: 2rem; /* Adjust padding as needed */
+    display: flex;
+    justify-content: space-between; /* Space out the footer sections */
+    flex-wrap: wrap; /* Wrap onto the next line if the screen is too small */
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    text-align: center;
+    flex: 1; /* Each footer section takes up equal space */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin-bottom: 1rem;
+  }
+  
+  .footer-about h3,
+  .footer-links h4,
+  .footer-contact h4 { 
+    font-size: 25px; 
+    color: #7a5040; /* Dark text color for headings */
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-about p,
+  .footer-contact p {
+    font-size: 18px;
+    color: #7a5040; /* Ensuring the text is readable */
+  }
+  
+  .footer-social-icons {
+    justify-content: center; 
+    font-size: 30px;
+    margin-top: 1rem;
+    display: flex; /* Display social icons inline */
+  }
+  
+  .footer-social-icons a {
+    text-decoration: none;
+    color: #7a5040; /* Dark text color for icons */
+    margin-right: 10px; /* Space between icons */
+    display: flex; /* Align icons properly */
+    align-items: center; /* Center icons vertically */
+  }
+
+  .footer-social-icons i{
+    text-align: center;
+  }
+  
+  .footer-social-icons a:hover,
+  .footer-social-icons a:focus {
+    color: #50372c; /* Darker shade for hover/focus states */
+  }
+  
+  .footer-links ul {
+    list-style-type: none; /* Removing bullets from the list */
+    padding: 0;
+    text-align: center;
+  }
+  
+  .footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #7a5040; /* Dark text color for links */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-links ul li a:hover,
+  .footer-links ul li a:focus {
+    color: #50372c; /* Darker shade for hover/focus states */
+  }
+  
+  .footer-contact p {
+    margin: 0.25rem 0; /* Small margins for contact info */
+  }
+  
+  @media (max-width: 768px) {
+    .site-footer {
+      flex-direction: column; /* Stack footer sections vertically on small screens */
+    }
+    
+    .social-icons {
+      justify-content: center; /* Center social icons on small screens */
+    }
+  
+    .social-icons a {
+      margin-right: 0.5rem; /* Smaller space between icons on mobile */
+    }
+  }
+  

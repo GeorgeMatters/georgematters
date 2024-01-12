@@ -1,0 +1,30 @@
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">I'd love to hear from you. Please send a message using the form below.</p>
+        <div class="contact-form-container">
+            <form id="contactForm" action="https://formspree.io/georgemattersdorfer@gmail.com" method="POST" novalidate>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        <span class="error-message">Name is required.</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="Your email address" required>
+                        <span class="error-message">Valid email is required.</span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message here" required></textarea>
+                        <span class="error-message">Please enter a message.</span>
+                    </div>
+                </div>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>

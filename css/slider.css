@@ -1,0 +1,43 @@
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.image-slider .slide {
+    flex: 0 0 100%; /* Adjust to 100% for full width */
+    max-width: 100%;
+    display: none; /* Hide slides initially */
+    align-items: center;
+    justify-content: center;
+}
+
+.image-slider .slide.active {
+    display: flex; /* Show active slide */
+}
+
+.image-slider .prev,
+.image-slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.image-slider .prev {
+    left: 10px;
+}
+
+.image-slider .next {
+    right: 10px;
+}
