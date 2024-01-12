@@ -1,100 +1,77 @@
-.project {
-    width: 200px; /* Fixed width for the project container */
-    /* Add a fixed height if you want all project containers to be the same height */
-    margin: 1rem auto; 
-    background: #ffffff; /* Assuming a white background for project items */
-    border: 1px solid #ccc; /* A subtle border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow */
-    overflow: hidden; /* Ensures the border-radius clips the child elements */
-    width: calc(33.333% - 1rem); /* Three items per row, adjust the percentage as needed */
-    margin-bottom: 1rem;
-  }
-  
 
 
-.projects-section {
-    background-color: #f5f1ec; /* Assuming a light background similar to the header */
-    color: #7a5040; /* Text color that matches the darker tones in the logo */
-    padding: 1rem; /* Adjust padding as needed */
-    text-align: center; /* Centering the text */
-  }
-  
-.projects-title {
-    font-size: 2.5rem; /* Adjust size as needed */
-    margin-bottom: 1rem;
-    
-  }
-  
-.projects-description {
+
+
+.project-info {
+    padding: 1rem;
+}
+
+.project-name {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
+    margin: 0.5rem 0;
+}
 
-.project-container {
-    display: flex;
-    gap: 1rem; /* Space between project items */
-    margin-top: 4rem;
-    justify-content: center; /* Center the items horizontally */
-  }
-  
-.project-cover {
-    width: 200px; /* Fixed width for the image */
-    height: 200px; /* Fixed height for the image */
-    border-radius: 50%; /* Makes the image round */
-    object-fit: cover; /* Ensures the image covers the area without stretching */
-    margin: 20px auto; /* Centers the image within its container and adds space around it */
+.project-year {
+    color: #a07855;
+    margin-bottom: 0.5rem;
 }
 
 
-  
-.project-info {
-    padding: 1rem;
-  }
-  
-.project-name {
-    font-size: 1.5rem; /* Adjust size as needed */
-    margin: 0.5rem 0;
-  }
-  
-.project-year {
-    color: #a07855; /* A complementary color for the year text */
-    margin-bottom: 0.5rem;
-  }
-  
-.project-description {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  
 .music-links a {
     display: inline-block;
     margin-right: 0.5rem;
     text-decoration: none;
-    color: #7a5040; /* Same as the text color */
+    color: #7a5040;
     font-weight: bold;
-  }
-  
+}
+
 .music-links a:hover,
 .music-links a:focus {
-    color: #50372c; /* Darker shade for hover/focus state */
-  }
-  
-.projects-link {
-    display: inline-block;
-    text-decoration: none;
-    color: #7a5040; /* Same as the text color */
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border: 1px solid #7a5040; /* Border using the text color */
-    border-radius: 4px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-.projects-link:hover,
-.projects-link:focus {
-    background-color: #7a5040;
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
+    color: #50372c;
+}
+
+
+
+
+.projects-section {
+    background-color: #f5f1ec;
+    color: #7a5040;
+    padding: 2rem;
+    text-align: center;
+}
+
+.projects-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.projects-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Adjusted for center alignment */
+    gap: 0.5rem;
+}
+
+.project {
+    flex-basis: calc(33.333% - 1rem); /* Adjusted to fit 3 items per row */
+    max-width: calc(33.333% - 1rem); /* Same adjustment as flex-basis */
+    margin: 0.5rem;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.project-cover {
+    width: 175px; /* Fixed width */
+    height: 175px; /* Fixed height to match the width */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensures image covers the area without stretching */
+    margin: 0 auto; /* Center the image within its container */
+}
