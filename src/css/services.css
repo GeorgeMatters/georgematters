@@ -1,0 +1,111 @@
+.services-section {
+    text-align: center;
+    background-color: #f9ecdb; /* Assuming a light background similar to the header */
+    color: #7a5040; /* Text color that matches the darker tones in the logo */
+    padding: 40px 20px; /* Adjust padding as needed */
+}
+
+.service-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 40px; 
+}
+
+.service-title {
+    color: #7a5040; /* Dark Brown Text */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-intro {
+    color: #3D2B1F; /* Dark Brown Text */
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-link {
+    /*transition: background-color 0.3s ease;*/
+    display: inline-block;
+    text-decoration: none;
+    color: #7a5040; /* Same as the text color */
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid #7a5040;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.service-link:hover,
+.service-link:focus {
+  background-color: #7a5040;
+  color: #ffffff;
+}
+
+.service-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.service-box {
+    width: calc(33.333% - 40px); /* Adjust the width as needed */
+    margin: 10px;
+    background-color: #f5f1ec; /* White background for the service box */
+    border: 1px solid #7a5040; /* Dark Brown border */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: left;
+    display: flex;
+}
+
+.service-box .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .service-box .icon-container i {
+    font-size: 2rem; /* Icon size */
+    color: #a07855; /* Complementary color for the icon */
+    margin-right: 10px; /* Space between the icon and the text */
+  }
+
+
+
+.box-title {
+    color: #7a5040; /* Dark Brown Text */
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.box-content {
+    color: #7a5040; /* Dark Brown Text */
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments as needed */
+@media (max-width: 992px) {
+    .service-box {
+        width: calc(50% - 40px); /* Adjust the width for tablet sizes */
+    }
+}
+
+@media (max-width: 768px) {
+    .service-boxes {
+        flex-direction: column;
+    }
+
+    .service-box {
+        width: 100%; /* Full width for mobile sizes */
+        margin: 20px 0;
+    }
+}

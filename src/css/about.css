@@ -1,0 +1,148 @@
+/* About Section */
+.about-section {
+    background-color: #f9ecdb; /* Beige background color from the logo */
+    color: #332C29; /* Dark text color for contrast */
+    padding: 40px 0; /* Uniform padding */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 30px; /* Keep the gap for spacing between items */
+    padding: 20px; /* Uniform padding */
+}
+
+.about-stats {
+    position: relative; 
+    background-color: #f5f1ec; /* White background for the stats */
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 30px; /* Space below stats */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center;
+}
+
+.stats-image {
+    position: absolute;
+    top: 30%; /* Align the top edge of the image with the top edge of the container */
+    left: 50%; /* Start at the horizontal center of the container */
+    transform: translateX(-50%); /* Center the image horizontally */
+    width: auto; /* Keep the image's aspect ratio */
+    height: auto; /* Adjust height as needed */
+    z-index: 0; /* Place it below the text by default */
+}
+
+.stats-number {
+    position: relative; 
+    color: #332C29; /* Deep rust color from the logo */
+    font-size: 3rem; /* Larger font-size for visibility */
+    font-weight: bold;
+}
+
+.stats-title {
+    position: relative; 
+    color: #332C29; /* Dark color for text */
+    font-size: 2.5rem;
+    margin-top: 5px;
+}
+
+
+
+.about-image-container {
+    perspective: 1000px; /* Creates a 3D space and sets the perspective */
+    display: flex;
+    justify-content: center; /* Centers the images in the container */
+    margin: 30px 0;
+}
+
+.about-image {
+    width: 75%; /* Adjust the width as needed */
+    height: auto;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3); /* Adds depth with a shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the transform effect */
+}
+
+.about-image-guitarist {
+    transform: rotateY(20deg); /* Rotates the image to the right */
+    margin-right: -5%; /* Negative margin to overlap the images a bit */
+}
+
+.about-image-singer {
+    transform: rotateY(-25deg); /* Rotates the image to the left */
+    margin-left: -5%; /* Negative margin to overlap the images a bit */
+}
+
+.about-content {
+    background-color: #f5f1ec; /* White background for content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow for depth */
+}
+
+.about-content h2 {
+    color: 3D2B1F;
+    font-size: 2.5rem; /* Larger font-size for main heading */
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.25rem; /* Readable font-size for paragraph text */
+    margin-bottom: 20px; /* Space below paragraphs */
+}
+
+
+
+/* Icon styles */
+.fas {
+    color: #8B4513; /* Deep rust color for icons */
+    margin-right: 10px; /* Space to the right of icons */
+}
+
+.detail-item {
+    display: flex;
+    align-items: center; /* Align the icon and text vertically */
+    text-align: left; /* Align text to the left for readability */
+    margin-bottom: 20px; /* Space below each detail item */
+}
+
+.detail-item i {
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: #8B4513; /* Deep rust color for icons */
+    margin-right: 10px; /* Space to the right of icons */
+}
+
+.detail-item h3 {
+    font-size: 1.5rem; /* Adjust size as needed */
+    margin: 0; /* Remove default margin */
+}
+
+.detail-item p {
+    font-size: 1rem; /* Maintain readability for detail text */
+    margin-left: 10px; /* If needed, add space between the icon and the text */
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack elements on smaller screens */
+        text-align: center;
+    }
+    .about-stats, .about-content {
+        padding: 20px; /* Consistent padding on smaller screens */
+    }
+    .about-image-guitarist, .about-image-singer {
+        transform: none;
+        margin: 0 0 20px 0; /* Resets the margin and removes transform for mobile */
+    }
+
+}
+

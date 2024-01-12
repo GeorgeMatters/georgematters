@@ -1,0 +1,54 @@
+.site-header {
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0;
+    left: 0; /* Added to ensure the header spans the entire width */
+    right: 0; /* Added to ensure the header spans the entire width */
+    z-index: 1000; /* Keep it on top of other content */
+    background-color: #f5f1ec;/*#f9ecdb;*/
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #D2B48C; /* Tan color for a subtle divider */
+}
+
+.site-header .site-logo {
+    height: 100px; /* Adjust size as needed */
+    width: 100px; /* Make width equal to height for a perfect circle */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; 
+}
+
+
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Adjust the space between navigation items as needed */
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation ul li {
+    padding: 15px;
+}
+
+.main-navigation a.nav-link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #7a5040; /* Darker brown shade from the logo */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.main-navigation a.nav-link:hover,
+.main-navigation a.nav-link:focus {
+    color: #50372c; /* Even darker shade for hover/focus states for better contrast */
+}
+
+/* Additional styles for active navigation link if needed */
+.main-navigation a.nav-link.active {
+    color: #8B4513; /* Deep rust color from the guitar in the logo */
+    border-bottom: 3px solid #8B4513; /* Underline the active link */
+}
+
