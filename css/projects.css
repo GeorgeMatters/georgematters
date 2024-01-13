@@ -1,7 +1,3 @@
-
-
-
-
 .project-info {
     padding: 1rem;
 }
@@ -31,12 +27,10 @@
 }
 
 
-
-
 .projects-section {
     background-color: #f5f1ec;
     color: #7a5040;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
 }
 
@@ -54,12 +48,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Adjusted for center alignment */
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .project {
-    flex-basis: calc(33.333% - 1rem); /* Adjusted to fit 3 items per row */
-    max-width: calc(33.333% - 1rem); /* Same adjustment as flex-basis */
+    flex-basis: calc(30% - 1rem); /* Adjusted to fit 3 items per row */
+    max-width: calc(30% - 1rem); /* Same adjustment as flex-basis */
     margin: 0.5rem;
     background: #ffffff;
     border: 1px solid #ccc;
@@ -74,4 +68,5 @@
     border-radius: 50%; /* Circular shape */
     object-fit: cover; /* Ensures image covers the area without stretching */
     margin: 0 auto; /* Center the image within its container */
+    padding-top: 25px
 }

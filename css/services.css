@@ -26,17 +26,18 @@
 }
 
 .service-link {
-    /*transition: background-color 0.3s ease;*/
     display: inline-block;
     text-decoration: none;
-    color: #7a5040; /* Same as the text color */
+    color: #7a5040; /* Text color */
     font-weight: bold;
     background-color: transparent;
-    border: 2px solid #7a5040;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    border: 2px solid #7a5040; /* Border color and thickness */
+    padding: 0.75rem 1.5rem; /* Increased padding for a larger button */
+    border-radius: 8px; /* Slightly larger border-radius */
+    font-size: 1.5rem; /* Increased font size for larger text */
     transition: all 0.3s ease-in-out;
 }
+
 
 
 .service-link:hover,

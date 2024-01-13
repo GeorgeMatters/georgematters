@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadHTML('html/services.html', 'services');
     loadHTML('html/projects.html', 'projects');
     loadHTML('html/contact.html', 'contact', initializeContactForm);
-    loadHTML('html/footer.html', 'footer');
+    loadHTML('html/footer.html', 'footer', attachNavListeners);
 });
 
 
@@ -149,6 +149,7 @@ function loadHTML(url, id, callback) {
 function initHomeSlider() {
     const slides = document.querySelectorAll('.home-section .home-slide');
     let currentSlide = 0;
+    attachNavListeners();
 
     function showNextSlide() {
         slides[currentSlide].classList.remove('active');
