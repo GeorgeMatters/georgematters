@@ -1,24 +1,29 @@
+
+
+.slider-section {
+    background-color: #f5f1ec; /* Matching the beige background color */
+    color: #3D2B1F; /* Consistent text color */
+    padding: 40px 0; /* Similar padding for vertical spacing */
+    text-align: center; /* Centering the content */
+}
+
+.slider-section h3 {
+    color: #7a5040; /* Dark Brown Text */
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+
+}
+
 .image-slider {
-    position: relative;
     width: 100%;
-    max-width: 800px;
-    height: 450px;
-    margin: auto;
+    max-width: 1350px; /* Adjust as needed */
+    height: 450px; /* Fixed height */
+    margin: 20px auto;
     overflow: hidden;
     display: flex;
-    transition: transform 0.5s ease;
-}
+    justify-content: start; /* Align images to the start */
+    position: relative; /* Required for absolute positioning of navigation buttons */
 
-.image-slider .slide {
-    flex: 0 0 100%; /* Adjust to 100% for full width */
-    max-width: 100%;
-    display: none; /* Hide slides initially */
-    align-items: center;
-    justify-content: center;
-}
-
-.image-slider .slide.active {
-    display: flex; /* Show active slide */
 }
 
 .image-slider .prev,
@@ -41,3 +46,32 @@
 .image-slider .next {
     right: 10px;
 }
+
+.image-slider .slide {
+    flex: 0 0 33.333%; /* Each slide takes up one-third of the container */
+    max-width: 33.333%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Adds spacing between images */
+}
+
+.image-slider .slide:last-child {
+    margin-right: 0; /* No margin for the last slide */
+}
+
+.image-slider .slide.active {
+    display: flex; /* Show active slide */
+}
+
+.image-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover the area uniformly */
+}
+
+
+
+
+
+

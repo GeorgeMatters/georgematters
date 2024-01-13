@@ -8,7 +8,7 @@
 .service-container {
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding: 12px;
     text-align: center;
     margin-bottom: 40px; 
 }
@@ -16,6 +16,7 @@
 .service-title {
     color: #7a5040; /* Dark Brown Text */
     font-size: 2.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 

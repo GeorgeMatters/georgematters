@@ -12,7 +12,6 @@
     margin-bottom: 0.5rem;
 }
 
-
 .music-links a {
     display: inline-block;
     margin-right: 0.5rem;
@@ -26,7 +25,6 @@
     color: #50372c;
 }
 
-
 .projects-section {
     background-color: #f5f1ec;
     color: #7a5040;
@@ -36,6 +34,7 @@
 
 .projects-title {
     font-size: 2.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -68,5 +67,5 @@
     border-radius: 50%; /* Circular shape */
     object-fit: cover; /* Ensures image covers the area without stretching */
     margin: 0 auto; /* Center the image within its container */
-    padding-top: 25px
+    padding-top: 1.5rem
 }
