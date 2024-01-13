@@ -5,19 +5,21 @@
     justify-content: center;
     background-color: #f9ecdb; /* Light background color */
     color: #332C29; /* Adjusted for better contrast */
-    padding: 4rem 0; /* Increased spacing around the content */
+    padding: 4rem 0; /*Increased spacing around the content */
+    padding-top: 1.5rem ;
     text-align: center;
 }
 
 .section-title {
     font-size: 2.5rem; /* Slightly larger title */
+    margin-top: 1rem;
     margin-bottom: 1rem;
     color: #7a5040; /* Deep rust color for the title */
 }
 
 .section-subtitle {
     font-size: 1.5rem; /* Slightly larger subtitle for emphasis */
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     color: #3D2B1F; /* Subtle dark text color */
 }
 
@@ -80,26 +82,6 @@
 .contact-form-container .submit-button:focus {
     background-color: #50372c; /* Darker color on hover/focus */
     transform: translateY(-2px); /* Slight raise for interactive feedback */
-}
-
-.button {
-    display: inline-block;
-    text-decoration: none;
-    color: #7a5040; /* Same as the text color */
-    font-weight: bold;
-    background-color: transparent;
-    border: 2px solid #7a5040;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer; /* To show it's clickable */
-    outline: none; /* Remove default focus outline */
-}
-
-.button:hover,
-.button:focus {
-    background-color: #7a5040;
-    color: #ffffff;
 }
 
 

@@ -14,7 +14,7 @@
     margin: auto;
     display: flex;
     gap: 30px; /* Keep the gap for spacing between items */
-    padding: 20px; /* Uniform padding */
+    padding: 60px; /* Uniform padding */
 }
 
 .about-stats {

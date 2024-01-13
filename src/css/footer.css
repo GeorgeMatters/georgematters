@@ -91,3 +91,12 @@
     }
   }
   
+  .footer-bottom {
+    text-align: center; /* Center align the text */
+    /* padding: 1rem 0;  Add some padding at the top and bottom */
+    color: #7a5040; /* Use the same text color as other footer elements */
+    font-size: 16px; /* Adjust font size as needed */
+    border-top: 1px solid #D2B48C; /* A subtle border line at the top */
+    margin-top: 1rem; /* Space between main footer content and this line */
+    width: 100%;
+}
