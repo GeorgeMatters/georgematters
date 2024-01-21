@@ -1,0 +1,57 @@
+.cookies-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #7a5040;
+    min-height: 150px; /* New minimum height */
+}
+
+/* Style for the Cookie Consent Container */
+.cookie-consent-container {
+    max-width: 1200px;
+    margin: auto;
+    overflow: auto; /* New overflow handling */
+}
+
+/* Style for the Cookie Consent Content */
+.cookie-consent-content {
+    margin: 0 auto;
+    display: block; /* Changed from inline-block to block */
+}
+
+.cookie-consent-content p {
+    margin: 0;
+    padding: 0 50px;
+    font-size: 1rem;
+}
+
+.cookie-consent-content a {
+    color: #4B8EE7;
+    text-decoration: none;
+}
+
+/* Style for the Consent Button */
+.cookie-button {
+    background-color: transparent;
+    color: #7a5040;
+    border: 2px solid #7a5040;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.cookie-button:hover,
+.cookie-button:focus {
+    background-color: #7a5040;
+    color: #ffffff;
+}

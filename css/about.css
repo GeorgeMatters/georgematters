@@ -14,7 +14,7 @@
     margin: auto;
     display: flex;
     gap: 30px; /* Keep the gap for spacing between items */
-    padding: 60px; /* Uniform padding */
+    padding: 6p0px; /* Uniform padding */
 }
 
 .about-stats {
@@ -78,6 +78,11 @@
 .about-image-singer {
     transform: rotateY(-25deg); /* Rotates the image to the left */
     margin-left: -5%; /* Negative margin to overlap the images a bit */
+}
+
+.about-image-profile {
+    transform: rotateY(15deg); /* Rotates the image to the left */
+    margin-right: -5%; /* Negative margin to overlap the images a bit */
 }
 
 .about-content {

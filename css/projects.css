@@ -1,3 +1,4 @@
+/* General Styles */
 .project-info {
     padding: 1rem;
 }
@@ -46,13 +47,13 @@
 .project-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Adjusted for center alignment */
+    justify-content: center;
     gap: 1rem;
 }
 
 .project {
-    flex-basis: calc(30% - 1rem); /* Adjusted to fit 3 items per row */
-    max-width: calc(30% - 1rem); /* Same adjustment as flex-basis */
+    flex-basis: calc(30% - 1rem);
+    max-width: calc(30% - 1rem);
     margin: 0.5rem;
     background: #ffffff;
     border: 1px solid #ccc;
@@ -62,10 +63,62 @@
 }
 
 .project-cover {
-    width: 175px; /* Fixed width */
-    height: 175px; /* Fixed height to match the width */
-    border-radius: 50%; /* Circular shape */
-    object-fit: cover; /* Ensures image covers the area without stretching */
-    margin: 0 auto; /* Center the image within its container */
-    padding-top: 1.5rem
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin: 1rem 0;
+    }
+
+    .project-cover {
+        width: 125px;
+        height: 125px;
+        padding-top: 1rem;
+    }
+
+    .project-name {
+        font-size: 1.2rem;
+    }
+
+    .projects-title, .projects-description {
+        font-size: 1.5rem;
+    }
+
+    .music-links a {
+        margin-right: 0.25rem;
+        font-size: 0.9rem;
+    }
+
+    .project-info {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-cover {
+        width: 100px;
+        height: 100px;
+    }
+
+    .project-name {
+        font-size: 1rem;
+    }
+
+    .projects-title, .projects-description {
+        font-size: 1.2rem;
+    }
 }

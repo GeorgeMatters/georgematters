@@ -1,6 +1,4 @@
-
-
-// Function to load a HTML file into a target div and execute a callback after loading
+// Modified loadHTML function
 function loadHTML(url, id, callback) {
     fetch(url)
         .then(response => response.text())
@@ -9,16 +7,71 @@ function loadHTML(url, id, callback) {
             if (element) {
                 element.innerHTML = data;
                 if (callback) callback();
+
+                // Check cookie consent after loading each section
+                //checkCookieConsent();
             }
         }).catch(error => console.error('Error loading HTML:', error));
+}
+
+
+// Cookie Consent Logic
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function checkCookieConsent() {
+    console.log('Checking cookie consent');
+    var cookiesSection = document.getElementById('cookies');
+    if (cookiesSection && getCookie('cookieConsent') !== '1') {
+        console.log('Checking cookie, set to block');
+        cookiesSection.style.display = 'block';
+    }
+}
+
+
+
+function initCookies() {
+    // Set up the event listener for the consent button
+    var consentButton = document.getElementById('cookieConsentButton');
+    if (consentButton) {
+        consentButton.addEventListener('click', function() {
+            // Set a cookie for 1 year to record consent
+            setCookie('cookieConsent', '1', 365);
+
+            // Hide the cookie consent banner
+            var cookiesSection = document.getElementById('cookies');
+            if (cookiesSection) {
+                cookiesSection.style.display = 'none';
+            }
+        });
+    }
+
+    // Check if the cookie consent banner should be displayed
+    checkCookieConsent();
 }
 
 // Function to initialize the home slider
 function initHomeSlider() {
     const slides = document.querySelectorAll('.home-section .home-slide');
     let currentSlide = 0;
-    attachNavListeners();
-
     function showNextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
@@ -60,23 +113,23 @@ function initializeContactForm() {
 
         Array.from(contactForm.elements).forEach(input => {
             if (input.type !== "submit" && !validateInput(input)) {
-                    isFormValid = false;
-                }
-            
-            });
-            if (isFormValid) {
-                alert('Thank you for your message! We will get back to you soon.');
-            } else {
-                console.log('Please fill out all the fields correctly.');
+                isFormValid = false;
             }
         });
-        
-        function validateInput(input) {
-            const isValid = input.checkValidity();
-            input.parentElement.classList.toggle('invalid', !isValid);
-            return isValid;
+
+        if (isFormValid) {
+            alert('Thank you for your message! We will get back to you soon.');
+        } else {
+            console.log('Please fill out all the fields correctly.');
         }
+    });
+
+    function validateInput(input) {
+        const isValid = input.checkValidity();
+        input.parentElement.classList.toggle('invalid', !isValid);
+        return isValid;
     }
+}
 
 function startSlideshow() {
     const slider = document.getElementById('image-slider');
@@ -114,22 +167,23 @@ function startSlideshow() {
 
     slider.querySelector('.next').addEventListener('click', nextSlide);
     slider.querySelector('.prev').addEventListener('click', prevSlide);
-    
+
     // Automatic movement
     setInterval(nextSlide, 4000); // Change slide every 4 seconds
 
     updateSlider(); // Initialize the slider
 }
-    
+
 // Load and initialize sections when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-loadHTML('html/header.html', 'header', attachNavListeners);
-loadHTML('html/home.html', 'home', initHomeSlider);
-loadHTML('html/about.html', 'about');
-loadHTML('html/slider.html', 'slider', startSlideshow);
-loadHTML('html/socialmedia.html', 'social');
-loadHTML('html/services.html', 'services', attachNavListeners);
-loadHTML('html/projects.html', 'projects');
-loadHTML('html/contact.html', 'contact', initializeContactForm);
-loadHTML('html/footer.html', 'footer', attachNavListeners);
-});    
+    loadHTML('html/header.html', 'header', attachNavListeners);
+    loadHTML('html/home.html', 'home', initHomeSlider);
+    loadHTML('html/about.html', 'about');
+    loadHTML('html/slider.html', 'slider', startSlideshow);
+    loadHTML('html/socialmedia.html', 'social');
+    loadHTML('html/services.html', 'services', attachNavListeners);
+    loadHTML('html/projects.html', 'projects');
+    loadHTML('html/contact.html', 'contact', initializeContactForm);
+    loadHTML('html/footer.html', 'footer', attachNavListeners);
+    loadHTML('html/cookies.html', 'cookies', initCookies);
+});
