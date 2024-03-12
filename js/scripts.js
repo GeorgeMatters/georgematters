@@ -47,6 +47,19 @@ function checkCookieConsent() {
 }
 
 
+function initHamburger() {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('main-navigation');
+
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', function() {
+            nav.classList.toggle('is-active');
+        });
+    } else {
+        console.error('Hamburger menu or navigation elements not found!');
+    }
+}
+
 
 function initCookies() {
     // Set up the event listener for the consent button
@@ -85,7 +98,7 @@ function initHomeSlider() {
 function attachNavListeners() {
     const header = document.querySelector('.site-header');
     const headerHeight = header ? header.offsetHeight : 0;
-
+    initHamburger()
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -186,4 +199,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadHTML('html/contact.html', 'contact', initializeContactForm);
     loadHTML('html/footer.html', 'footer', attachNavListeners);
     loadHTML('html/cookies.html', 'cookies', initCookies);
+
 });
+

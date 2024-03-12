@@ -14,7 +14,7 @@
     margin: auto;
     display: flex;
     gap: 30px; /* Keep the gap for spacing between items */
-    padding: 6p0px; /* Uniform padding */
+    padding: 60px; /* Uniform padding */
 }
 
 .about-stats {
@@ -137,11 +137,24 @@
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
+    .about-content, .about-stats {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .detail-item {
+        justify-content: center;
+    }
     .about-container {
-        flex-direction: column; /* Stack elements on smaller screens */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
     .about-stats, .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding: 20px; /* Consistent padding on smaller screens */
     }
     .about-image-guitarist, .about-image-singer {
@@ -149,5 +162,12 @@
         margin: 0 0 20px 0; /* Resets the margin and removes transform for mobile */
     }
 
-}
+    .stats-number {
+        font-size: 2.5rem; /* Optimize font size for key stats */
+    }
 
+    .stats-image {
+        width: 50%; /* Adjust decorative images to better fit mobile screens */
+    }
+
+}

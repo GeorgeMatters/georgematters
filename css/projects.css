@@ -79,46 +79,34 @@
     }
 
     .project {
-        flex-basis: 100%;
-        max-width: 100%;
+        flex-basis: 90%; /* Slightly reduce width for side margins */
+        max-width: 90%; /* Adjust based on preference for margin */
+        min-width: 270px;
         margin: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Softer shadow for a cleaner look */
     }
 
     .project-cover {
-        width: 125px;
+        width: 125px; /* Adjust image size for balance */
         height: 125px;
-        padding-top: 1rem;
+        padding-top: 1rem; /* Adjust padding for consistency */
     }
 
     .project-name {
-        font-size: 1.2rem;
+        font-size: 1.4rem; /* Ensure readability */
     }
 
     .projects-title, .projects-description {
-        font-size: 1.5rem;
+        font-size: 1.8rem; /* Slightly larger font sizes for key titles */
+        margin-bottom: 1.5rem; /* Adjust spacing for a clean look */
     }
 
     .music-links a {
         margin-right: 0.25rem;
-        font-size: 0.9rem;
+        font-size: 1rem; /* Adjust font size for readability */
     }
 
     .project-info {
-        padding: 0.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .project-cover {
-        width: 100px;
-        height: 100px;
-    }
-
-    .project-name {
-        font-size: 1rem;
-    }
-
-    .projects-title, .projects-description {
-        font-size: 1.2rem;
+        padding: 0.75rem; /* Adjust padding for content breathing space */
     }
 }

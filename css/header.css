@@ -1,30 +1,28 @@
 .site-header {
-    position: fixed; /* Changed from sticky to fixed */
+    position: fixed;
     top: 0;
-    left: 0; /* Added to ensure the header spans the entire width */
-    right: 0; /* Added to ensure the header spans the entire width */
-    z-index: 1000; /* Keep it on top of other content */
-    background-color: #f5f1ec;/*#f9ecdb;*/
-    padding: 10px 20px; /* Adjust padding as needed */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #f5f1ec;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #D2B48C; /* Tan color for a subtle divider */
+    border-bottom: 2px solid #D2B48C;
 }
 
 .site-header .site-logo {
-    height: 100px; /* Adjust size as needed */
-    width: 100px; /* Make width equal to height for a perfect circle */
-    border-radius: 50%; /* Makes the image round */
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
     object-fit: cover; 
 }
-
-
 
 .main-navigation ul {
     list-style: none;
     display: flex;
-    gap: 30px; /* Adjust the space between navigation items as needed */
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
@@ -36,19 +34,54 @@
 .main-navigation a.nav-link {
     text-decoration: none;
     font-size: 20px;
-    color: #7a5040; /* Darker brown shade from the logo */
+    color: #7a5040;
     font-weight: bold;
-    transition: color 0.3s ease; /* Smooth transition for hover effects */
+    transition: color 0.3s ease;
 }
 
 .main-navigation a.nav-link:hover,
 .main-navigation a.nav-link:focus {
-    color: #50372c; /* Even darker shade for hover/focus states for better contrast */
+    color: #50372c;
 }
 
-/* Additional styles for active navigation link if needed */
 .main-navigation a.nav-link.active {
-    color: #8B4513; /* Deep rust color from the guitar in the logo */
-    border-bottom: 3px solid #8B4513; /* Underline the active link */
+    color: #8B4513;
+    border-bottom: 3px solid #8B4513;
 }
 
+.hamburger {
+    display: none; /* Initially hidden, shown in the mobile view */
+    cursor: pointer;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: #7a5040;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .main-navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        background-color: #f5f1ec;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+    }
+
+    .main-navigation ul li {
+        text-align: center;
+    }
+
+    .main-navigation.is-active {
+        display: flex; /* This makes the menu visible when the hamburger is clicked */
+    }
+}

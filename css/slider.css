@@ -70,6 +70,49 @@
     object-fit: cover; /* Ensures images cover the area uniformly */
 }
 
+/* Base styles for the slider section remain unchanged */
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .slider-section h3 {
+        font-size: 2rem; /* Adjust the heading size for mobile */
+        margin-bottom: 2rem; /* Reduce margin to save space */
+    }
+
+
+    .image-slider .slide img {
+        width: 80%; /* Full width of the slide */
+        height: 200px; /* Fixed height for all images */
+        object-fit: cover; /* Cover the area without losing aspect ratio */
+    }
+
+    .image-slider .prev,
+    .image-slider .next {
+        /* Increase button size for easier interaction on mobile */
+        padding: 15px;
+        font-size: 2rem; /* Adjust the font size of the icons if using text/icons */
+    }
+
+    .image-slider .slide {
+        flex: 0 0 100%; /* Make each slide take the full width of the slider */
+        max-width: 100%; /* Ensure slide does not exceed slider's width */
+        justify-content: center; /* Center content within the slide */
+        margin-right: 0; /* Remove margin between slides as it's now full width */
+    }
+
+    .image-slider .slide img {
+        height: auto; /* Adjust height dynamically to maintain aspect ratio */
+        object-fit: cover; /* Cover the slide area without stretching */
+    }
+
+    /* Optional: Hide navigation arrows on mobile for swipe-based navigation */
+    .image-slider .prev,
+    .image-slider .next {
+        display: none;
+    }
+
+    /* Consider implementing swipe functionality for mobile users */
+}
 
 
 
