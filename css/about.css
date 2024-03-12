@@ -28,15 +28,40 @@
     text-align: center;
 }
 
+
+.detail-item .about-me {
+    position: relative;
+    background-color: #f5f1ec; /* White background for the stats */
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 30px; /* Space below stats */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center;
+    justify-content: center;
+}
+
+
+.detail-item .about-me p {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    /* Additional styling options */
+    line-height: 1.6; /* Improve readability */
+    margin-top: 0.5rem; /* Add some space above the paragraph */
+    margin-bottom: 0.5rem; /* Add some space below the paragraph */
+}
+
+
 .stats-image {
     position: absolute;
-    top: 30%; /* Align the top edge of the image with the top edge of the container */
-    left: 50%; /* Start at the horizontal center of the container */
-    transform: translateX(-50%); /* Center the image horizontally */
-    width: auto; /* Keep the image's aspect ratio */
-    height: auto; /* Adjust height as needed */
-    z-index: 0; /* Place it below the text by default */
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250%; /* Set the maximum width to 20% of the container */
+    max-width: 250%; /* Ensure the image is not bigger than its container */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    z-index: 0;
 }
+
 
 .stats-number {
     position: relative; 

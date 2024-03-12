@@ -35,7 +35,7 @@
     border: 2px solid #7a5040; /* Border color and thickness */
     padding: 0.75rem 1.5rem; /* Increased padding for a larger button */
     border-radius: 8px; /* Slightly larger border-radius */
-    font-size: 1.5rem; /* Increased font size for larger text */
+    font-size: 2rem; /* Increased font size for larger text */
     transition: all 0.3s ease-in-out;
 }
 
@@ -79,6 +79,11 @@
     margin-right: 10px; /* Space between the icon and the text */
   }
 
+  .service-box p {
+    font-size: 1.2rem; 
+
+    margin-right: 10px; 
+  }
 
 
 .box-title {
@@ -111,3 +116,6 @@
         margin: 20px 0;
     }
 }
+
+
+
