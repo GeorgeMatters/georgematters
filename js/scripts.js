@@ -50,10 +50,19 @@ function checkCookieConsent() {
 function initHamburger() {
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('main-navigation');
+    const navLinks = document.querySelectorAll('.nav-link'); // Select all navigation links
 
     if (hamburger && nav) {
+        // Toggle the visibility of the navigation menu
         hamburger.addEventListener('click', function() {
             nav.classList.toggle('is-active');
+        });
+
+        // Close the navigation menu when any navigation link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('is-active');
+            });
         });
     } else {
         console.error('Hamburger menu or navigation elements not found!');

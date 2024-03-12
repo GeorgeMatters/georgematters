@@ -97,8 +97,8 @@
     }
 
     .projects-title, .projects-description {
-        font-size: 1.8rem; /* Slightly larger font sizes for key titles */
-        margin-bottom: 1.5rem; /* Adjust spacing for a clean look */
+        font-size: 1.4rem; /* Slightly larger font sizes for key titles */
+        margin-bottom: 1.2rem; /* Adjust spacing for a clean look */
     }
 
     .music-links a {
