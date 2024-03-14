@@ -5,6 +5,7 @@
     color: #3D2B1F; /* Consistent text color */
     padding: 40px 0; /* Similar padding for vertical spacing */
     text-align: center; /* Centering the content */
+    max-width: 100%;
 }
 
 .slider-section h3 {
@@ -15,10 +16,11 @@
 }
 
 .image-slider {
-    width: 100%;
-    max-width: 1350px; /* Adjust as needed */
+    width: 80%;
+    /*max-width: 1350px;  Adjust as needed */
     height: 450px; /* Fixed height */
     margin: 20px auto;
+    padding: 20px;
     overflow: hidden;
     display: flex;
     justify-content: start; /* Align images to the start */
@@ -40,11 +42,11 @@
 }
 
 .image-slider .prev {
-    left: 10px;
+    left: 20px;
 }
 
 .image-slider .next {
-    right: 10px;
+    right: 20px;
 }
 
 .image-slider .slide {
