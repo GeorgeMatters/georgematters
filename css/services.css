@@ -55,6 +55,9 @@
 }
 
 .service-box {
+    display: flex; /* Ensure flex display for direct children alignment */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; 
     width: calc(33.333% - 40px); /* Adjust the width as needed */
     margin: 10px;
     background-color: #f5f1ec; /* White background for the service box */
@@ -66,22 +69,28 @@
     display: flex;
 }
 
+
+
+
 .service-box .icon-container {
+    flex: 1; /* Allow it to grow as needed, but not more than the content size */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    align-items: center; /* Align the icon and title vertically */
+    text-align: left; 
+
   }
   
   .service-box .icon-container i {
     font-size: 2rem; /* Icon size */
     color: #a07855; /* Complementary color for the icon */
     margin-right: 10px; /* Space between the icon and the text */
+    text-align: left;
+    justify-content: left;
   }
 
   .service-box p {
     font-size: 1.2rem; 
-
+    text-align: left;
     margin-right: 10px; 
   }
 
@@ -90,13 +99,18 @@
     color: #7a5040; /* Dark Brown Text */
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
 }
+
+
 
 .box-content {
     color: #7a5040; /* Dark Brown Text */
     font-size: 1rem;
     line-height: 1.4;
+    flex: 2; /* Allow it to take more space */
+    text-align: right; /* Align the text to the right */
+    margin-left: 10px; 
 }
 
 /* Responsive adjustments as needed */
