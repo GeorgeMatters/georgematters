@@ -1,6 +1,6 @@
 .social-media-section {
-    background-color: #f5f1ec; /* Beige background color from the logo */
-    color: #3D2B1F; /* Dark Brown Text */
+    background-color: #ebe8e1; /* Updated to a lighter gray */
+    color: #605e5c; /* Updated to a softer charcoal gray */
     padding: 40px 0;
     text-align: center;
 }
@@ -12,7 +12,7 @@
 }
 
 .social-media-section h3 {
-    color: #7a5040; /* Dark Brown Text */
+    color: #6e675f; /* Updated to a warm gray */
     font-size: 2.5rem;
     margin-bottom: 5rem;
 }
@@ -20,18 +20,19 @@
 .social-icons {
     font-size: 4em; /* Size of the icons */
     margin-top: 5px;
+    margin-bottom: 60px; /* Increased spacing below the icons */
 }
 
 .social-icons a {
     display: inline-block;
     margin: 0 60px;
-    color: #3D2B1F; /* Deep Rust */
+    color: #605e5c; /* Updated to a softer charcoal gray */
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover,
 .social-icons a:focus {
-    color: #8B4513; /* Darker shade for hover/focus state */
+    color: #504a43; /* Updated to a darker gray for hover/focus state */
 }
 
 /* Icon Styling (if not using a font library) */
@@ -45,6 +46,15 @@
     background-position: center;
 }
 
+/* Separator Line */
+.separator-line {
+    border: 0;
+    height: 1px;
+    background: #605e5c; /* Color matching the theme */
+    margin: 0 auto; /* Center the line */
+    margin-top: 80px; /* Increased spacing above the line */
+    max-width: 100%; /* Increased width of the line */
+}
 
 /* Responsive adjustments as needed */
 @media (max-width: 768px) {

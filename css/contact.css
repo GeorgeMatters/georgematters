@@ -1,26 +1,27 @@
+/*
 .contact-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f9ecdb; /* Light background color */
-    color: #332C29; /* Adjusted for better contrast */
-    padding: 4rem 0; /*Increased spacing around the content */
+    background-color: #f9ecdb; 
+    color: #332C29; 
+    padding: 4rem 0;
     padding-top: 1.5rem ;
     text-align: center;
 }
 
 .section-title {
-    font-size: 2.5rem; /* Slightly larger title */
+    font-size: 2.5rem; 
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: #7a5040; /* Deep rust color for the title */
+    color: #7a5040;
 }
 
 .section-subtitle {
-    font-size: 1.5rem; /* Slightly larger subtitle for emphasis */
+    font-size: 1.5rem; 
     margin-bottom: 2.5rem;
-    color: #3D2B1F; /* Subtle dark text color */
+    color: #3D2B1F; 
 }
 
 .contact-form-container {
@@ -29,74 +30,179 @@
     background: #f5f1ec;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for depth */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .input-group {
-    margin-bottom: 1.5rem; /* Increased space between input groups */
+    margin-bottom: 1.5rem;
 }
 
 .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: bold; /* Bold label text */
-    color: #332C29; /* Rich Charcoal for label */
+    font-weight: bold; 
+    color: #332C29; 
 }
 
 .input-group input,
 .input-group textarea {
     width: 90%;
-    padding: 1rem; /* Increased padding for larger touch targets */
-    border: 2px solid #ccc; /* Thicker border for input */
+    padding: 1rem; 
+    border: 2px solid #ccc; 
     border-radius: 4px;
-    font-size: 1rem; /* Standard font size for readability */
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); /* Subtle inset shadow for depth */
-    transition: border-color 0.3s ease-in-out; /* Transition for interactive feedback */
+    font-size: 1rem; 
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); 
+    transition: border-color 0.3s ease-in-out;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-    border-color: #8B4513; /* Focus color to match the theme */
-    outline: none; /* Removing default outline */
+    border-color: #8B4513; 
+    outline: none; 
 }
 
 .input-group .error-message {
     color: #d9534f;
-    display: none; /* Maintain hidden by default */
-    font-size: 0.9rem; /* Slightly smaller font size for error messages */
+    display: none; 
+    font-size: 0.9rem; 
 }
 
 .contact-form-container .submit-button {
-    background-color: #8B4513; /* Button color to match the theme */
+    background-color: #8B4513; 
     color: #ffffff;
-    padding: 1rem 2rem; /* Larger button for easier interaction */
-    font-size: 1.25rem; /* Larger font size for button */
+    padding: 1rem 2rem;
+    font-size: 1.25rem; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Consistent shadow for buttons */
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease; /* Smooth transition for hover effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .contact-form-container .submit-button:hover,
 .contact-form-container .submit-button:focus {
-    background-color: #50372c; /* Darker color on hover/focus */
-    transform: translateY(-2px); /* Slight raise for interactive feedback */
+    background-color: #50372c; 
+    transform: translateY(-2px);
 }
 
 
-/* Responsive design adjustments */
+
 @media (max-width: 768px) {
     .contact-form-container {
-        padding: 2rem 1rem; /* Adjust padding on smaller screens */
+        padding: 2rem 1rem; 
     }
 
     .input-group input,
     .input-group textarea {
-        padding: 0.75rem; /* Adjust padding for smaller screens */
+        padding: 0.75rem; 
     }
 
     .contact-form-container .submit-button {
-        padding: 1rem; /* Adjust button padding on smaller screens */
+        padding: 1rem; 
     }
 }
+
+*/
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0ede8; /* Updated to a light gray that harmonizes with the overall theme */
+    color: #605e5c; /* Soft charcoal gray for better contrast */
+    padding: 4rem 0;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #6e675f; /* Updated to a warm gray tone */
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #504a43; /* Darker gray for subtitle */
+}
+
+.contact-form-container {
+    max-width: 1200px;
+    margin: auto;
+    background: #ebe8e1; /* Lighter gray for the form background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow maintained for depth */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #605e5c; /* Consistent soft charcoal gray for labels */
+}
+
+.input-group input,
+.input-group textarea {
+    width: 90%;
+    padding: 1rem;
+    border: 2px solid #ccc; /* Maintaining the border but could update to a gray tone if needed */
+    border-radius: 4px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); /* Inset shadow maintained */
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #6e675f; /* Updated focus color to a warm gray */
+    outline: none;
+}
+
+.input-group .error-message {
+    color: #d9534f; /* Error color maintained for visibility */
+    display: none;
+    font-size: 0.9rem;
+}
+
+.contact-form-container .submit-button {
+    background-color: #6e675f; /* Updated to warm gray */
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.contact-form-container .submit-button:hover,
+.contact-form-container .submit-button:focus {
+    background-color: #504a43; /* Darker gray on hover/focus for contrast */
+    transform: translateY(-2px); /* Slight raise for interactive feedback */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 2rem 1rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding: 0.75rem;
+    }
+
+    .contact-form-container .submit-button {
+        padding: 1rem;
+    }
+}
+

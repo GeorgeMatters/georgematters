@@ -1,8 +1,10 @@
+/*
+
 .services-section {
     text-align: center;
-    background-color: #f9ecdb; /* Assuming a light background similar to the header */
-    color: #7a5040; /* Text color that matches the darker tones in the logo */
-    padding: 40px 20px; /* Adjust padding as needed */
+    background-color: #f9ecdb;
+    color: #7a5040;
+    padding: 40px 20px;
 }
 
 .service-container {
@@ -14,14 +16,14 @@
 }
 
 .service-title {
-    color: #7a5040; /* Dark Brown Text */
+    color: #7a5040; 
     font-size: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 .service-intro {
-    color: #3D2B1F; /* Dark Brown Text */
+    color: #3D2B1F;
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -29,13 +31,13 @@
 .service-link {
     display: inline-block;
     text-decoration: none;
-    color: #7a5040; /* Text color */
+    color: #7a5040;
     font-weight: bold;
     background-color: transparent;
-    border: 2px solid #7a5040; /* Border color and thickness */
-    padding: 0.75rem 1.5rem; /* Increased padding for a larger button */
-    border-radius: 8px; /* Slightly larger border-radius */
-    font-size: 2rem; /* Increased font size for larger text */
+    border: 2px solid #7a5040; 
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 2rem;
     transition: all 0.3s ease-in-out;
 }
 
@@ -55,16 +57,16 @@
 }
 
 .service-box {
-    display: flex; /* Ensure flex display for direct children alignment */
-    align-items: center; /* Align items vertically in the center */
+    display: flex;
+    align-items: center;
     justify-content: space-between; 
-    width: calc(33.333% - 40px); /* Adjust the width as needed */
+    width: calc(33.333% - 40px);
     margin: 10px;
-    background-color: #f5f1ec; /* White background for the service box */
-    border: 1px solid #7a5040; /* Dark Brown border */
+    background-color: #f5f1ec; 
+    border: 1px solid #7a5040; 
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
     display: flex;
 }
@@ -73,17 +75,17 @@
 
 
 .service-box .icon-container {
-    flex: 1; /* Allow it to grow as needed, but not more than the content size */
+    flex: 1;
     display: flex;
-    align-items: center; /* Align the icon and title vertically */
+    align-items: center;
     text-align: left; 
 
   }
   
   .service-box .icon-container i {
-    font-size: 2rem; /* Icon size */
-    color: #a07855; /* Complementary color for the icon */
-    margin-right: 10px; /* Space between the icon and the text */
+    font-size: 2rem;
+    color: #a07855;
+    margin-right: 10px;
     text-align: left;
     justify-content: left;
   }
@@ -96,7 +98,7 @@
 
 
 .box-title {
-    color: #7a5040; /* Dark Brown Text */
+    color: #7a5040;
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     margin-left: 1.5rem;
@@ -105,18 +107,18 @@
 
 
 .box-content {
-    color: #7a5040; /* Dark Brown Text */
+    color: #7a5040;
     font-size: 1rem;
     line-height: 1.4;
-    flex: 2; /* Allow it to take more space */
-    text-align: right; /* Align the text to the right */
+    flex: 2;
+    text-align: right; 
     margin-left: 10px; 
 }
 
-/* Responsive adjustments as needed */
+
 @media (max-width: 992px) {
     .service-box {
-        width: calc(50% - 40px); /* Adjust the width for tablet sizes */
+        width: calc(50% - 40px);
     }
 }
 
@@ -126,10 +128,132 @@
     }
 
     .service-box {
-        width: 100%; /* Full width for mobile sizes */
+        width: 100%; 
         margin: 20px 0;
     }
 }
 
 
 
+*/
+
+.services-section {
+    text-align: center;
+    background-color: #f0ede8; /* Updated to a light gray */
+    color: #605e5c; /* Updated text color to a softer charcoal gray */
+    padding: 40px 20px;
+}
+
+.service-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 40px; 
+}
+
+.service-title {
+    color: #6e675f; /* Updated to a warm gray */
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.service-intro {
+    color: #504a43; /* Updated to a darker gray */
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #6e675f; /* Updated text color to warm gray */
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid #6e675f; /* Border color updated to match text */
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.service-link:hover,
+.service-link:focus {
+    background-color: #504a43; /* Darker gray for hover/focus */
+    color: #ffffff;
+}
+
+.service-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.service-box {
+    align-items: center;
+    justify-content: space-between;
+    width: calc(33.333% - 40px); 
+    margin: 10px;
+    background-color: #ebe8e1; /* Updated to a lighter gray */
+    border: 1px solid #a8a397; /* Updated to a muted taupe-gray */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+}
+
+.service-box .icon-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.service-box .icon-container i {
+    font-size: 2rem;
+    color: #6e675f; /* Icon color slightly adjusted to blend better */
+    margin-right: 10px;
+}
+
+.service-box p {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-right: 10px; 
+}
+
+.box-title {
+    color: #6e675f; /* Updated to warm gray */
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.box-content {
+    color: #6e675f; /* Updated to warm gray */
+    font-size: 1rem;
+    line-height: 1.4;
+    flex: 2;
+    text-align: right;
+    margin-left: 10px; 
+}
+
+
+@media (max-width: 992px) {
+    .service-box {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-boxes {
+        flex-direction: column;
+    }
+
+    .service-box {
+        width: 100%;
+        margin: 20px 0;
+    }
+}

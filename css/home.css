@@ -1,15 +1,15 @@
-/* Home Section */
+/* BEIGE BROWN STYLE HOME
 .home-section {
     position: relative;
     height: 100vh;
    
-    color: #332C29; /* Rich Charcoal Text, slightly lighter than black for softness */
-    background-color: #f9ecdb; /* Beige background color to keep consistency with the header */
+    color: #332C29; 
+    background-color: #f9ecdb; 
 }
 .home-section .image-slider-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Set to the height of the viewport */
+    height: 100vh; 
 }
 
 
@@ -19,44 +19,43 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover; /* Ensure images cover the slide area */
-    background-position: center; /* Center images within the slide */
-    opacity: 0; /* Start with slides fully transparent */
-    /*transition: opacity 1s ease-in-out;  Smooth transition for the slides */
-    z-index: 1; /* Positioned below the overlay text */
-    display: none; /* default to none */
-    transition: opacity 1s ease-in-out, visibility 0s 1s; /* Add visibility transition */
+    background-size: cover; 
+    background-position: center;
+    opacity: 0; 
+    z-index: 1;
+    display: none; 
+    transition: opacity 1s ease-in-out, visibility 0s 1s; 
 
 }
 
 .home-section .slide.active {
-    opacity: 1; /* Fully opaque when active */
-    z-index: 2; /* Above the other slides */
-    display: block; /* Required for the image to be visible */
+    opacity: 1;
+    z-index: 2;
+    display: block;
 }
 
 
-/* Overlay Text */
+
 .overlay-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 2; /* Ensures text is above the slides */
-    width: 80%; /* Adjust as needed */
-    max-width: 800px; /* Suitable maximum width for readability */
+    z-index: 2; 
+    width: 80%; 
+    max-width: 800px; 
     padding: 20px;
     border-radius: 8px;
-    background: rgba(245, 241, 236, 0.9); /* Slightly more opaque overlay for text background */
-    border: 1px solid #D2B48C; /* Tan border for a softer contrast */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    color: #332C29; /* Rich Charcoal Text */
+    background: rgba(245, 241, 236, 0.9);
+    border: 1px solid #D2B48C; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    color: #332C29;
 }
 
 
 .overlay-text h2, .overlay-text p {
-    text-shadow: none; /* Removed text shadow for a cleaner look */
+    text-shadow: none;
 }
 
 
@@ -70,7 +69,7 @@
 .button {
     display: inline-block;
     text-decoration: none;
-    color: #7a5040; /* Same as the text color */
+    color: #7a5040;
     font-weight: bold;
     background-color: transparent;
     border: 2px solid #7a5040;
@@ -97,15 +96,100 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover; /* Ensure images cover the slide area */
-    background-position: center; /* Center images within the slide */
-    opacity: 0; /* Start with slides fully transparent */
-    transition: opacity 1s ease-in-out; /* Smooth transition for the slides */
-    z-index: 1; /* Positioned below the overlay text */
-    display: block; /* Change to block */
+    background-size: cover;
+    background-position: center; 
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1; 
+    display: block; 
 }
 
 .home-section .home-slide.active {
+    opacity: 1; 
+    z-index: 2; 
+}
+
+*/
+
+/* Home Section */
+.home-section {
+    position: relative;
+    height: 100vh;
+    color: #605e5c; /* Softened charcoal, closer to gray */
+    background-color: #f0ede8; /* Light gray that harmonizes with the beige */
+}
+
+.home-section .image-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.home-section .home-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 1s ease-in-out, visibility 0s 1s; /* Enhanced visibility transition */
+    z-index: 1; /* Positioned below the overlay text */
+    display: none; /* Default to none */
+}
+
+.home-section .slide.active {
     opacity: 1; /* Fully opaque when active */
+    z-index: 2; /* Above the other slides */
+    display: block; /* Display block when active */
+}
+
+/* Overlay Text */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3; /* Ensures text is above the slides */
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(230, 227, 220, 0.9); /* Light grayish overlay for better legibility */
+    border: 1px solid #a8a397; /* Taupe-gray border for a refined look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for subtlety */
+    color: #605e5c; /* Grayish text color for harmony */
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: None;
+    color: #6e675f; /* Warm gray */
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid #6e675f; /* Consistent with text color */
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #504a43; /* Darker gray for emphasis on hover/focus */
+    color: #ffffff;
+}
+
+.home-section .home-slide {
+    display: block; /* Show all slides as block but invisible until active */
+}
+
+.home-section .home-slide.active {
+    opacity: 1; /* Ensure active slide is visible */
     z-index: 2; /* Above the other slides */
 }

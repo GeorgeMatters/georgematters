@@ -1,8 +1,10 @@
 /* About Section */
 .about-section {
-    background-color: #f9ecdb; /* Beige background color from the logo */
-    color: #332C29; /* Dark text color for contrast */
-    padding: 40px 0; /* Uniform padding */
+    /*background-color: #f9ecdb;
+    color: #332C29;*/
+    background-color: #f0ede8; 
+    color: #605e5c;
+    padding: 40px 0;
     text-align: center;
     display: flex;
     align-items: center;
@@ -13,41 +15,43 @@
     max-width: 1200px;
     margin: auto;
     display: flex;
-    gap: 30px; /* Keep the gap for spacing between items */
-    padding: 60px; /* Uniform padding */
+    gap: 30px;
+    padding: 60px;
 }
 
 .about-stats {
     position: relative; 
-    background-color: #f5f1ec; /* White background for the stats */
+    background-color: #ebe8e1;
+    /*background-color: #f5f1ec;*/
     display: inline-block;
     padding: 20px;
-    margin-bottom: 30px; /* Space below stats */
+    margin-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 
 .detail-item .about-me {
     position: relative;
-    background-color: #f5f1ec; /* White background for the stats */
+    /*background-color: #f5f1ec;*/
+    background-color: #ebe8e1; 
     display: inline-block;
     padding: 20px;
-    margin-bottom: 30px; /* Space below stats */
+    margin-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     justify-content: center;
 }
 
 
 .detail-item .about-me p {
-    font-size: 1.5rem; /* Adjust the size as needed */
-    /* Additional styling options */
-    line-height: 1.6; /* Improve readability */
-    margin-top: 0.5rem; /* Add some space above the paragraph */
-    margin-bottom: 0.5rem; /* Add some space below the paragraph */
+    font-size: 1.5rem;
+    
+    line-height: 1.6;
+    margin-top: 0.5rem; 
+    margin-bottom: 0.5rem;
 }
 
 
@@ -56,23 +60,25 @@
     top: 30%;
     left: 50%;
     transform: translateX(-50%);
-    width: 250%; /* Set the maximum width to 20% of the container */
-    max-width: 250%; /* Ensure the image is not bigger than its container */
-    height: auto; /* Adjust height to maintain aspect ratio */
+    width: 250%; 
+    max-width: 250%; 
+    height: auto; 
     z-index: 0;
 }
 
 
 .stats-number {
     position: relative; 
-    color: #332C29; /* Deep rust color from the logo */
-    font-size: 3rem; /* Larger font-size for visibility */
+    /*color: #332C29; */
+    color: #605e5c; 
+    font-size: 3rem; 
     font-weight: bold;
 }
 
 .stats-title {
     position: relative; 
-    color: #332C29; /* Dark color for text */
+    /*color: #332C29;*/
+    color: #605e5c; 
     font-size: 2.5rem;
     margin-top: 5px;
 }
@@ -80,87 +86,90 @@
 
 
 .about-image-container {
-    perspective: 1000px; /* Creates a 3D space and sets the perspective */
+    perspective: 1000px;
     display: flex;
-    justify-content: center; /* Centers the images in the container */
+    justify-content: center;
     margin: 30px 0;
 }
 
 .about-image {
-    width: 75%; /* Adjust the width as needed */
+    width: 75%; 
     height: auto;
     object-fit: cover;
     border-radius: 18px;
-    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3); /* Adds depth with a shadow */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for the transform effect */
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease-in-out;
 }
 
 .about-image-guitarist {
-    transform: rotateY(20deg); /* Rotates the image to the right */
-    margin-right: -5%; /* Negative margin to overlap the images a bit */
+    transform: rotateY(20deg);
+    margin-right: -5%;
 }
 
 .about-image-singer {
-    transform: rotateY(-25deg); /* Rotates the image to the left */
-    margin-left: -5%; /* Negative margin to overlap the images a bit */
+    transform: rotateY(-25deg); 
+    margin-left: -5%;
 }
 
 .about-image-profile {
-    transform: rotateY(15deg); /* Rotates the image to the left */
-    margin-right: -5%; /* Negative margin to overlap the images a bit */
+    transform: rotateY(15deg); 
+    margin-right: -5%;
 }
 
 .about-content {
-    background-color: #f5f1ec; /* White background for content */
+    /*background-color: #f5f1ec; */
+    background-color: #ebe8e1; 
+ 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .about-content h2 {
-    color: 3D2B1F;
-    font-size: 2.5rem; /* Larger font-size for main heading */
+    color: #605e5c;
+    font-size: 2.5rem; 
     margin-bottom: 20px;
 }
 
 .about-content p {
-    font-size: 1.25rem; /* Readable font-size for paragraph text */
-    margin-bottom: 20px; /* Space below paragraphs */
+    font-size: 1.25rem; 
+    margin-bottom: 20px; 
 }
 
 
 
-/* Icon styles */
 .fas {
-    color: #8B4513; /* Deep rust color for icons */
-    margin-right: 10px; /* Space to the right of icons */
+    /*color: #8B4513;*/
+    color: #6e675f;
+    margin-right: 10px;
 }
 
 .detail-item {
     display: flex;
-    align-items: center; /* Align the icon and text vertically */
-    text-align: left; /* Align text to the left for readability */
-    margin-bottom: 20px; /* Space below each detail item */
+    align-items: center; 
+    text-align: left; 
+    margin-bottom: 20px; 
 }
 
 .detail-item i {
-    font-size: 1.5em; /* Adjust the size as needed */
-    color: #8B4513; /* Deep rust color for icons */
-    margin-right: 10px; /* Space to the right of icons */
+    font-size: 1.5em; 
+    color: #6e675f;
+    /*color: #8B4513;*/
+    margin-right: 10px;
 }
 
 .detail-item h3 {
-    font-size: 1.5rem; /* Adjust size as needed */
-    margin: 0; /* Remove default margin */
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 .detail-item p {
-    font-size: 1rem; /* Maintain readability for detail text */
-    margin-left: 10px; /* If needed, add space between the icon and the text */
+    font-size: 1rem;
+    margin-left: 10px; 
 }
 
 
-/* Responsive design adjustments */
+
 @media (max-width: 768px) {
     .about-content, .about-stats {
         flex-direction: column;
@@ -180,19 +189,182 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 20px; /* Consistent padding on smaller screens */
+        padding: 20px;
     }
     .about-image-guitarist, .about-image-singer {
         transform: none;
-        margin: 0 0 20px 0; /* Resets the margin and removes transform for mobile */
+        margin: 0 0 20px 0; 
     }
 
     .stats-number {
-        font-size: 2.5rem; /* Optimize font size for key stats */
+        font-size: 2.5rem; 
     }
 
     .stats-image {
-        width: 50%; /* Adjust decorative images to better fit mobile screens */
+        width: 50%;
     }
 
 }
+
+
+
+/* About Section 
+.about-section {
+    background-color: #f0ede8; 
+    color: #605e5c;
+    padding: 40px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    padding: 60px;
+}
+
+.about-stats {
+    background-color: #ebe8e1; 
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+.detail-item .about-me {
+    background-color: #ebe8e1; 
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    justify-content: center;
+}
+
+.stats-number {
+    color: #605e5c; 
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.stats-title {
+    color: #605e5c; 
+    font-size: 2.5rem;
+    margin-top: 5px;
+}
+
+.about-image-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.about-image {
+    width: 75%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image-guitarist {
+    transform: rotateY(20deg);
+    margin-right: -5%;
+}
+
+.about-image-singer {
+    transform: rotateY(-25deg);
+    margin-left: -5%;
+}
+
+.about-image-profile {
+    transform: rotateY(15deg);
+    margin-right: -5%;
+}
+
+.about-content {
+    background-color: #ebe8e1; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+    color: #605e5c; 
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+
+.fas, .detail-item i {
+    color: #6e675f; 
+    margin-right: 10px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.detail-item h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.detail-item p {
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .about-content, .about-stats {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .detail-item {
+        justify-content: center;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-stats, .about-content {
+        padding: 20px;
+    }
+
+    .about-image-guitarist, .about-image-singer {
+        transform: none;
+        margin: 0 0 20px 0;
+    }
+
+    .stats-number {
+        font-size: 2.5rem;
+    }
+
+    .stats-image {
+        width: 50%;
+    }
+}
+*/

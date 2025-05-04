@@ -1,15 +1,15 @@
 
-
+/*
 .slider-section {
-    background-color: #f5f1ec; /* Matching the beige background color */
-    color: #3D2B1F; /* Consistent text color */
-    padding: 40px 0; /* Similar padding for vertical spacing */
-    text-align: center; /* Centering the content */
+    background-color: #f5f1ec; 
+    color: #3D2B1F;
+    padding: 40px 0;
+    text-align: center; 
     max-width: 100%;
 }
 
 .slider-section h3 {
-    color: #7a5040; /* Dark Brown Text */
+    color: #7a5040; 
     font-size: 2.5rem;
     margin-bottom: 5rem;
 
@@ -17,14 +17,13 @@
 
 .image-slider {
     width: 80%;
-    /*max-width: 1350px;  Adjust as needed */
-    height: 450px; /* Fixed height */
+    height: 450px;
     margin: 20px auto;
     padding: 20px;
     overflow: hidden;
     display: flex;
-    justify-content: start; /* Align images to the start */
-    position: relative; /* Required for absolute positioning of navigation buttons */
+    justify-content: start; 
+    position: relative; 
 
 }
 
@@ -35,6 +34,119 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.image-slider .prev {
+    left: 20px;
+}
+
+.image-slider .next {
+    right: 20px;
+}
+
+.image-slider .slide {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.image-slider .slide:last-child {
+    margin-right: 0;
+}
+
+.image-slider .slide.active {
+    display: flex; 
+}
+
+.image-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@media (max-width: 768px) {
+    .slider-section h3 {
+        font-size: 2rem; 
+        margin-bottom: 2rem; 
+    }
+
+
+    .image-slider .slide img {
+        width: 80%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .image-slider .prev,
+    .image-slider .next {
+        padding: 15px;
+        font-size: 2rem; 
+    }
+
+    .image-slider .slide {
+        flex: 0 0 100%; 
+        max-width: 100%; 
+        justify-content: center; 
+        margin-right: 0; 
+    }
+
+    .image-slider .slide img {
+        height: auto; 
+        object-fit: cover; 
+    }
+
+    
+    .image-slider .prev,
+    .image-slider .next {
+        display: none;
+    }
+
+    
+}
+
+
+*/
+
+
+.slider-section {
+    background-color: #ebe8e1; /* Updated to a lighter gray to match the new theme */
+    color: #605e5c; /* Updated to a softer charcoal gray for better readability */
+    padding: 40px 0;
+    text-align: center; /* Centering the content */
+    max-width: 100%;
+}
+
+.slider-section h3 {
+    color: #6e675f; /* Updated to a warm gray */
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.image-slider {
+    width: 80%;
+    height: 450px; /* Fixed height */
+    margin: 20px auto;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: start; /* Align images to the start */
+    position: relative; /* Required for absolute positioning of navigation buttons */
+}
+
+.image-slider .prev,
+.image-slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black maintained for visibility */
     color: white;
     border: none;
     padding: 10px;
@@ -72,15 +184,12 @@
     object-fit: cover; /* Ensures images cover the area uniformly */
 }
 
-/* Base styles for the slider section remain unchanged */
-
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
     .slider-section h3 {
         font-size: 2rem; /* Adjust the heading size for mobile */
         margin-bottom: 2rem; /* Reduce margin to save space */
     }
-
 
     .image-slider .slide img {
         width: 80%; /* Full width of the slide */
@@ -90,9 +199,8 @@
 
     .image-slider .prev,
     .image-slider .next {
-        /* Increase button size for easier interaction on mobile */
         padding: 15px;
-        font-size: 2rem; /* Adjust the font size of the icons if using text/icons */
+        font-size: 2rem; /* Increase button size for easier interaction on mobile */
     }
 
     .image-slider .slide {
@@ -115,8 +223,3 @@
 
     /* Consider implementing swipe functionality for mobile users */
 }
-
-
-
-
-

@@ -1,3 +1,5 @@
+
+/* BEIGE BROWN STYLE 
 .site-header {
     position: fixed;
     top: 0;
@@ -50,7 +52,7 @@
 }
 
 .hamburger {
-    display: none; /* Initially hidden, shown in the mobile view */
+    display: none; 
     cursor: pointer;
     font-size: 24px;
     background: transparent;
@@ -71,6 +73,97 @@
         width: 100%;
         left: 0;
         background-color: #f5f1ec;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+    }
+
+    .main-navigation ul li {
+        text-align: center;
+    }
+
+    .main-navigation.is-active {
+        display: flex; 
+    }
+}
+
+
+*/
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ebe8e1; /* Lighter gray that harmonizes with beige */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #a8a397; /* Muted taupe-gray */
+}
+
+.site-header .site-logo {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation ul li {
+    padding: 15px;
+}
+
+.main-navigation a.nav-link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #6e675f; /* Warm gray */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-navigation a.nav-link:hover,
+.main-navigation a.nav-link:focus {
+    color: #504a43; /* Darker gray */
+}
+
+.main-navigation a.nav-link.active {
+    color: #403c34; /* Even darker gray, almost charcoal */
+    border-bottom: 3px solid #403c34;
+}
+
+.hamburger {
+    display: none; /* Initially hidden, shown in the mobile view */
+    cursor: pointer;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: #6e675f; /* Warm gray */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .main-navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        background-color: #ebe8e1; /* Consistent with the header */
     }
 
     .main-navigation ul {
