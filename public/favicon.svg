@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="George Matters">
+  <defs>
+    <linearGradient id="gm-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b86b2c" />
+      <stop offset="100%" stop-color="#7f3f1d" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#171615" />
+  <path fill="url(#gm-gradient)" d="M26 14c-8.3 0-15 6.7-15 15s6.7 15 15 15c5.4 0 10.1-2.8 12.8-7h-8.3c-1.2 1.1-2.8 1.8-4.5 1.8-3.8 0-6.8-3-6.8-6.8s3-6.8 6.8-6.8c2.3 0 4.4 1.2 5.6 3.1H26v5.2h15V14h-5.2v5.3C33.1 16.1 29.7 14 26 14Z"/>
+  <circle cx="47.5" cy="45.5" r="5.5" fill="#efe7db" />
+  <rect x="44.6" y="20" width="3.8" height="21" rx="1.9" fill="#efe7db" />
+</svg>

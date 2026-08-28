@@ -1,0 +1,280 @@
+@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/fraunces/opsz.css";
+
+:root {
+  /* ---- ground & surfaces (dark, green-biased neutrals) ---- */
+  --bg: #0b0e0c;
+  --surface: #161b17;
+  --surface-raised: #1c221d;
+  --surface-glass: rgba(22, 27, 23, 0.72);
+  --deep: #070908;
+
+  /* ---- lines ---- */
+  --line: rgba(233, 239, 229, 0.09);
+  --line-strong: rgba(233, 239, 229, 0.17);
+  --line-input: rgba(233, 239, 229, 0.38); /* 3.09:1 — WCAG 1.4.11 for field boundaries */
+
+  /* ---- type ---- */
+  --text: #e9efe5;
+  --muted: #a0ad9b;
+
+  /* ---- accent (sage, carried over from the brand, raised for dark) ---- */
+  --accent: #9ec395;
+  --accent-bright: #b4d5ab;
+  --accent-deep: #6e9166;
+  --accent-soft: #1a251b;
+
+  /* ---- warm secondary, keeps the page off single-accent-on-black ---- */
+  --sand: #d9c7a3;
+  --bone: #f9ecda; /* the logo artwork's own opaque ground */
+
+  --shadow: 0 32px 80px -24px rgba(0, 0, 0, 0.72);
+  --shadow-soft: 0 18px 40px -20px rgba(0, 0, 0, 0.6);
+  --glow: 0 0 0 1px rgba(158, 195, 149, 0.14), 0 20px 48px -20px rgba(110, 145, 102, 0.34);
+
+  --radius-xl: 1.5rem;
+  --radius-lg: 1.1rem;
+  --max-width: 1200px;
+  --font-body: "Manrope Variable", "Manrope", "Helvetica Neue", sans-serif;
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(60rem 40rem at 12% -8%, rgba(158, 195, 149, 0.09), transparent 62%),
+    radial-gradient(48rem 34rem at 96% 4%, rgba(217, 199, 163, 0.055), transparent 60%),
+    linear-gradient(180deg, #0d100e 0%, var(--bg) 44%, #080a09 100%);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+main,
+footer,
+header {
+  position: relative;
+  z-index: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::selection {
+  background: rgba(158, 195, 149, 0.26);
+  color: var(--text);
+}
+
+/* Visible keyboard focus everywhere — accent on any surface clears 3:1 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0.35rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-shell {
+  background: linear-gradient(180deg, rgba(28, 34, 29, 0.72), rgba(22, 27, 23, 0.62));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.section-intro {
+  max-width: 44rem;
+  margin-bottom: 2.4rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2.75rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.section-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.8vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.038em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.section-copy {
+  margin: 1rem 0 0;
+  font-size: 1.02rem;
+  line-height: 1.78;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3.25rem;
+  padding: 0.95rem 1.45rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--accent-bright) 0%, var(--accent-deep) 100%);
+  color: var(--bg);
+  box-shadow: var(--glow);
+}
+
+.button--primary:hover,
+.button--primary:focus-visible {
+  box-shadow: 0 0 0 1px rgba(158, 195, 149, 0.28), 0 26px 56px -20px rgba(110, 145, 102, 0.5);
+}
+
+.button--secondary {
+  background: rgba(233, 239, 229, 0.045);
+  border-color: var(--line-input);
+  color: var(--text);
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.62rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(233, 239, 229, 0.045);
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .container {
+    width: min(calc(100% - 1.25rem), var(--max-width));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

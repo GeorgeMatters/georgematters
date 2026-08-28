@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+
+import type { Artist, Navigation, Social, FooterContent } from '../lib/content';
+
+interface Props {
+  artist: Artist;
+  navigation: Navigation;
+  social: Social;
+  footer: FooterContent;
+}
+
+const { artist, navigation, social, footer } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-shell">
+    <div>
+      <Image class="footer-logo" src={resolveImage(footer.logo)} alt={`${artist.name} Logo`} widths={[160, 320]} sizes="80px" loading="lazy" />
+      <p class="footer-label">{artist.name}</p>
+      <p class="footer-copy">{footer.tagline}</p>
+      <p class="footer-copy">
+        {artist.city}, {artist.country}
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-label">{footer.navLabel}</p>
+      <nav class="footer-links" aria-label="Footer Navigation">
+        {navigation.items.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+    </div>
+
+    <div>
+      <p class="footer-label">{footer.contactLabel}</p>
+      <div class="footer-links">
+        <a href={`tel:${artist.phone.replace(/\s/g, '')}`}>{artist.phone}</a>
+        <a href={`mailto:${artist.email}`}>{artist.email}</a>
+        {social.items.map((item) => (
+          <a href={item.href} target="_blank" rel="noreferrer noopener">{item.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© {year} {artist.name}. {footer.rights}</span>
+    <span>{footer.credit}</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 1rem 0 2.5rem;
+  }
+
+  .footer-shell {
+    display: grid;
+    grid-template-columns: 1.1fr 0.7fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(160deg, var(--surface-raised), var(--deep));
+    border: 1px solid var(--line);
+    border-radius: 1.5rem;
+    color: var(--text);
+    box-shadow: var(--shadow);
+  }
+
+  .footer-logo {
+    width: 5rem;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+    background: var(--bone);
+    padding: 0.25rem;
+  }
+
+  .footer-label {
+    margin: 0 0 1rem;
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .footer-copy {
+    margin: 0;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  .footer-copy + .footer-copy {
+    margin-top: 0.5rem;
+  }
+
+  .footer-links {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    color: var(--accent);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 980px) {
+    .footer-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,287 @@
+---
+import Icon from './Icon.astro';
+
+import type { ContactContent, Artist, Social } from '../lib/content';
+
+interface Props {
+  contact: ContactContent;
+  artist: Artist;
+  social: Social;
+}
+
+const { contact, artist, social } = Astro.props;
+---
+<section class="section" id="kontakt">
+  <div class="container contact-shell">
+    <div class="contact-copy">
+      <div class="section-intro">
+        <div class="eyebrow">{contact.kicker}</div>
+        <h2 class="section-title">{contact.headline}</h2>
+        <p class="section-copy">{contact.subheadline}</p>
+      </div>
+
+      <div class="contact-cards">
+        <a class="contact-card panel" href={`tel:${artist.phone.replace(/\s/g, '')}`}>
+          <div class="contact-icon">
+            <Icon name="phone" />
+          </div>
+          <div>
+            <span>{contact.phoneLabel}</span>
+            <strong>{artist.phone}</strong>
+          </div>
+        </a>
+
+        <a class="contact-card panel" href={`mailto:${artist.email}`}>
+          <div class="contact-icon">
+            <Icon name="mail" />
+          </div>
+          <div>
+            <span>{contact.emailLabel}</span>
+            <strong>{artist.email}</strong>
+          </div>
+        </a>
+
+        <div class="contact-card panel">
+          <div class="contact-icon">
+            <Icon name="pin" />
+          </div>
+          <div>
+            <span>{contact.locationLabel}</span>
+            <strong>{artist.city}, {artist.country}</strong>
+            <small>{artist.availability}</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-row">
+        {social.items.map((item) => (
+          <a href={item.href} target="_blank" rel="noreferrer noopener">
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <form class="contact-form panel" data-mailto-form data-recipient={artist.email} data-subject={contact.mailSubjectPrefix}>
+      <div class="form-grid">
+        {contact.fields.map((field) => {
+          const isWide = field.type === 'textarea';
+          return (
+            <label class={`field ${isWide ? 'field--wide' : ''}`}>
+              <span>{field.label}{field.required ? ' *' : ''}</span>
+              {field.type === 'textarea' ? (
+                <textarea
+                  name={field.name}
+                  rows="6"
+                  required={field.required}
+                  placeholder={field.label}
+                  data-label={field.label}
+                />
+              ) : (
+                <input
+                  type={field.type}
+                  name={field.name}
+                  required={field.required}
+                  placeholder={field.label}
+                  data-label={field.label}
+                />
+              )}
+            </label>
+          );
+        })}
+      </div>
+
+      <button class="button button--primary form-submit" type="submit">{contact.submitLabel}</button>
+      <p class="form-note">{contact.note}</p>
+    </form>
+  </div>
+</section>
+
+<script is:inline>
+  const mailtoForm = document.querySelector('[data-mailto-form]');
+
+  if (mailtoForm instanceof HTMLFormElement) {
+    mailtoForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!mailtoForm.reportValidity()) {
+        return;
+      }
+
+      const recipient = mailtoForm.dataset.recipient || '';
+      const formData = new FormData(mailtoForm);
+
+      const name = String(formData.get('name') || '').trim();
+      const occasion = String(formData.get('occasion') || '').trim();
+      const date = String(formData.get('date') || '').trim();
+      const subjectParts = [mailtoForm.dataset.subject || ''];
+
+      if (name) subjectParts.push(name);
+      if (occasion) subjectParts.push(occasion);
+      if (date) subjectParts.push(date);
+
+      const body = Array.from(mailtoForm.elements)
+        .filter((element) => element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement)
+        .filter((element) => element.name && !element.disabled)
+        .map((element) => {
+          const label = element.dataset.label || element.name;
+          const value = element.value.trim();
+          return value ? `${label}: ${value}` : '';
+        })
+        .filter(Boolean)
+        .join('\n');
+
+      const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectParts.join(' – '))}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+    });
+  }
+</script>
+
+<style>
+  .contact-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: 2.75rem;
+    align-items: start;
+  }
+
+  .contact-cards {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .contact-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+  }
+
+  .contact-card span,
+  .contact-card small {
+    display: block;
+    color: var(--muted);
+  }
+
+  .contact-card strong {
+    display: block;
+    margin-top: 0.2rem;
+    line-height: 1.45;
+  }
+
+  .contact-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.9rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .contact-icon :global(svg) {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .social-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+  }
+
+  .social-row a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.72rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--line-input);
+    background: rgba(233, 239, 229, 0.05);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .social-row a:hover,
+  .social-row a:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .contact-form {
+    padding: 1.6rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .field {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .field--wide {
+    grid-column: 1 / -1;
+  }
+
+  .field span {
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    border: 1px solid var(--line-input);
+    border-radius: 1rem;
+    background: var(--surface-raised);
+    padding: 0.95rem 1rem;
+    color: var(--text);
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(158, 195, 149, 0.22);
+    background: var(--surface-raised);
+  }
+
+  .form-submit {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .form-note {
+    margin: 0.9rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 980px) {
+    .contact-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-copy {
+      max-width: 44rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .contact-form {
+      padding: 1.25rem;
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,146 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+
+import type { Projects } from '../lib/content';
+
+interface Props {
+  projects: Projects;
+}
+
+const { projects } = Astro.props;
+const visibleItems = projects.items.filter((item) => item.visible !== false);
+---
+<section class="section" id="projekte">
+  <div class="container">
+    <div class="section-intro">
+      <div class="eyebrow">{projects.kicker}</div>
+      <h2 class="section-title">{projects.headline}</h2>
+      <p class="section-copy">{projects.subheadline}</p>
+    </div>
+
+    <div class="projects-grid">
+      {visibleItems.map((item) => (
+        <article class="project-card panel">
+          <Image
+            class="project-image"
+            src={resolveImage(item.image)}
+            alt={`${item.name} – Projektbild`}
+            widths={[300, 600]}
+            sizes="(max-width: 720px) 100vw, 33vw"
+            loading="lazy"
+          />
+
+          <div class="project-body">
+            <span class="project-meta">{item.since}</span>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+
+            {item.links.length > 0 ? (
+              <div class="project-links">
+                {item.links.map((link) => (
+                  <a href={link.href} target="_blank" rel="noreferrer noopener">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <span class="project-note">Details auf Anfrage</span>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    overflow: hidden;
+  }
+
+  .project-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center center;
+    background: linear-gradient(180deg, rgba(158, 195, 149, 0.06), rgba(7, 9, 8, 0.5));
+  }
+
+
+
+  .project-body {
+    padding: 1.35rem;
+  }
+
+  .project-meta {
+    display: inline-flex;
+    padding: 0.38rem 0.62rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.83rem;
+    font-weight: 800;
+  }
+
+  .project-body h3 {
+    margin: 0.95rem 0 0;
+    font-size: 1.18rem;
+  }
+
+  .project-body p {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .project-links a,
+  .project-note {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.55rem;
+    padding: 0.6rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--line-input);
+    background: rgba(233, 239, 229, 0.05);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+
+  .project-links a:hover,
+  .project-links a:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .project-note {
+    margin-top: 1rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 980px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

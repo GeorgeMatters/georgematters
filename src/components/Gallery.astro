@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+
+import type { Gallery } from '../lib/content';
+
+interface Props {
+  gallery: Gallery;
+}
+
+const { gallery } = Astro.props;
+---
+<section class="section" id="galerie">
+  <div class="container">
+    <div class="section-intro">
+      <div class="eyebrow">{gallery.kicker}</div>
+      <h2 class="section-title">{gallery.headline}</h2>
+      <p class="section-copy">{gallery.subheadline}</p>
+    </div>
+
+    <div class="gallery-grid">
+      {gallery.items.map((item) => (
+        <figure class={`gallery-card gallery-card--${item.size}`}>
+          <Image src={resolveImage(item.image)} alt={item.alt} widths={[480, 800, 1200]} sizes="(max-width: 980px) 100vw, 50vw" loading="lazy" />
+          <figcaption>{item.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .gallery-card {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background: var(--deep);
+    box-shadow: var(--shadow-soft);
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-card--wide {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: saturate(0.96) contrast(1.01);
+  }
+
+  .gallery-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(7, 9, 8, 0.92) 100%);
+  }
+
+  .gallery-card figcaption {
+    position: absolute;
+    left: 1.1rem;
+    right: 1.1rem;
+    bottom: 1rem;
+    z-index: 1;
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 980px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-card--wide {
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>
