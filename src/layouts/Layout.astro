@@ -62,12 +62,27 @@ const schemaGraph = {
     }
   ]
 };
+
+// Escape `<` so no content value can terminate the script element early.
+const schemaJson = JSON.stringify(schemaGraph).replace(/</g, '\\u003c');
 ---
 <!doctype html>
 <html lang={site.language}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--
+      The site loads nothing third-party, so the policy can be strict.
+      GitHub Pages cannot set response headers, so this is delivered as a
+      meta policy. frame-ancestors is header-only and is therefore omitted;
+      clickjacking is mitigated by the absence of any authenticated surface.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' __CSP_SCRIPT_HASHES__; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{site.title}</title>
     <meta name="description" content={site.description} />
     <link rel="canonical" href={site.url} />
@@ -93,7 +108,7 @@ const schemaGraph = {
     <meta name="twitter:description" content={site.description} />
     <meta name="twitter:image" content={imageUrl} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+    <script type="application/ld+json" set:html={schemaJson} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link rel="apple-touch-icon" href={brandLogo} />
   </head>
