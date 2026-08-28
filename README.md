@@ -5,15 +5,36 @@ All editable content lives in **one** YAML file; everything else is derived from
 
 ## Requirements
 
-Node **22** (see `.nvmrc`). The build refuses to run on older versions.
+Node **22+**. Astro refuses to run on anything older, so *every* npm script
+fails until you switch — this is the most common reason the project appears
+broken.
+
+`.nvmrc` pins the version but **nvm does not apply it automatically**. Run this
+once per terminal session, from the project directory:
 
 ```bash
-nvm use          # picks up .nvmrc
+nvm use
+```
+
+To stop having to remember it, make 22 your default (this machine currently
+defaults to Node 20):
+
+```bash
+nvm alias default 22
+```
+
+Then:
+
+```bash
 npm ci
 npm run dev      # dev server
 npm run build    # production build into dist/
 npm run preview  # serve the built site
+npm run check    # guards + build + secret scan (what CI runs)
 ```
+
+`predev` / `prebuild` / `prepreview` run a version check first and print the
+exact fix rather than a generic engine error.
 
 ## Editing content
 
