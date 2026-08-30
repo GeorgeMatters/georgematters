@@ -77,11 +77,19 @@ const schemaJson = JSON.stringify(schemaGraph).replace(/</g, '\\u003c');
       GitHub Pages cannot set response headers, so this is delivered as a
       meta policy. frame-ancestors is header-only and is therefore omitted;
       clickjacking is mitigated by the absence of any authenticated surface.
+
+      PRODUCTION ONLY. The dev server serves every stylesheet as an inline
+      <style> tag and injects an inline HMR client, both of which this policy
+      blocks — which renders the dev page completely unstyled. The script
+      hashes are also only computed by the build integration, so the
+      placeholder would still be literal here.
     -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' __CSP_SCRIPT_HASHES__; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
-    />
+    {import.meta.env.PROD && (
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' __CSP_SCRIPT_HASHES__; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+      />
+    )}
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{site.title}</title>
     <meta name="description" content={site.description} />
