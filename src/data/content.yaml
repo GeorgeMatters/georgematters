@@ -299,7 +299,7 @@ legal:
   entityName: "TODO: voller rechtlicher Name, z. B. Georg Mattersdorfer"
   legalForm: "Einzelunternehmen"
   street: "TODO: Straße und Hausnummer"
-  postalCode: "TODO: PLZ"
+  postalCode: "9020"   # from the artist's own published footer on georgematters.at
   # Optional. Leave empty if it does not apply; empty fields are simply omitted.
   vatId: ""
   authority: ""
