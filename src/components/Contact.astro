@@ -187,15 +187,16 @@ const { contact, artist, social } = Astro.props;
   }
 
   .social-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    gap: 0.6rem;
+    margin-top: 1.5rem;
   }
 
   .social-row a {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     min-height: 2.75rem;
     padding: 0.72rem 0.95rem;
     border-radius: 999px;
