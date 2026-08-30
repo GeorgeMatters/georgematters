@@ -298,7 +298,7 @@ legal:
   # "TODO" so a placeholder Impressum can never be published.
   entityName: "Georg Mattersdorfer"   # from georg.mattersdorfer@gmail.com + the MATE logo credit "MATTERSDORFER / TEGROVSKY" — please confirm the spelling
   legalForm: "Einzelunternehmen"
-  street: "TODO: Straße und Hausnummer"
+  street: "Fischlstraße 12"
   postalCode: "9020"   # from the artist's own published footer on georgematters.at
   # Optional. Leave empty if it does not apply; empty fields are simply omitted.
   vatId: ""
@@ -331,6 +331,9 @@ legal:
   authorityUrl: "https://www.dsb.gv.at"
 
   # ── shared page furniture ──────────────────────────────────────────────────
+  odrHeading: "Online-Streitbeilegung"
+  odrText: "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+  odrUrl: "https://ec.europa.eu/consumers/odr/"
   impressumTitle: "Impressum"
   impressumHref: "/impressum"
   datenschutzTitle: "Datenschutz"

@@ -55,12 +55,12 @@ const tel = `tel:${artist.phone.replace(/\s/g, '')}`;
       <h2>{legal.copyrightHeading}</h2>
       <p>{legal.copyright}</p>
 
-      <h2>Online-Streitbeilegung</h2>
+      <h2>{legal.odrHeading}</h2>
       <p>
-        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:
-        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noreferrer noopener">ec.europa.eu/consumers/odr</a>.
-        Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor
-        einer Verbraucherschlichtungsstelle teilzunehmen.
+        {legal.odrText}{' '}
+        <a href={legal.odrUrl} target="_blank" rel="noreferrer noopener">
+          {legal.odrUrl.replace(/^https:\/\//, '').replace(/\/$/, '')}
+        </a>
       </p>
 
       <h2>Datenschutz</h2>

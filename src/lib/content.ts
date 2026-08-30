@@ -153,7 +153,10 @@ export const contentSchema = z.object({
   legal: z.object({
     entityName: requiredFact,
     legalForm: z.string().min(1),
-    street: requiredFact,
+    street: requiredFact.refine((v) => /\d/.test(v), {
+      message:
+        'a statutory address needs a house number (e.g. "Fischlstraße 12"), not just the street'
+    }),
     postalCode: requiredFact,
     vatId: z.string(),
     authority: z.string(),
@@ -179,6 +182,9 @@ export const contentSchema = z.object({
     authorityText: z.string().min(1),
     authorityName: z.string().min(1),
     authorityUrl: z.string().url(),
+    odrHeading: z.string().min(1),
+    odrText: z.string().min(1),
+    odrUrl: z.string().url(),
     impressumTitle: z.string().min(1),
     impressumHref: z.string().min(1),
     datenschutzTitle: z.string().min(1),
