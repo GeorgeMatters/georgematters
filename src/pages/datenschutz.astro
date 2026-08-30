@@ -1,0 +1,59 @@
+---
+import { getImage } from 'astro:assets';
+import { content } from '../lib/content';
+import { resolveImage } from '../lib/images';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LegalPage from '../components/LegalPage.astro';
+
+const { site, artist, social, legal, navigation, footer } = content;
+const socialImage = await getImage({ src: resolveImage(site.image), width: 1200, format: 'jpeg' });
+const brandLogo = await getImage({ src: resolveImage(site.logo), width: 512, format: 'png' });
+---
+<Layout
+  site={site}
+  artist={artist}
+  social={social}
+  socialImage={socialImage.src}
+  brandLogo={brandLogo.src}
+  title={`${legal.datenschutzTitle}erklärung`}
+  description={`Datenschutzerklärung nach Art. 13 DSGVO für ${artist.name}. Keine Cookies, kein Tracking, keine Drittanbieter.`}
+>
+  <Header navigation={navigation} logo={site.logo} />
+  <main id="main">
+    <LegalPage legal={legal} title={`${legal.datenschutzTitle}erklärung`} intro={legal.privacyIntro}>
+      <h2>Verantwortlicher</h2>
+      <dl>
+        <dt>Name</dt>
+        <dd>{legal.entityName}</dd>
+        <dt>Anschrift</dt>
+        <dd>{legal.street}<br />{legal.postalCode} {artist.city}<br />{artist.country}</dd>
+        <dt>E-Mail</dt>
+        <dd><a href={`mailto:${artist.email}`}>{artist.email}</a></dd>
+      </dl>
+
+      <h2>{legal.hostingHeading}</h2>
+      <p>{legal.hosting}</p>
+
+      <h2>{legal.cookiesHeading}</h2>
+      <p>{legal.cookies}</p>
+
+      <h2>{legal.fontsHeading}</h2>
+      <p>{legal.fonts}</p>
+
+      <h2>{legal.contactHeading}</h2>
+      <p>{legal.contact}</p>
+
+      <h2>{legal.rightsHeading}</h2>
+      <p>{legal.rights}</p>
+
+      <h2>{legal.authorityHeading}</h2>
+      <p>
+        {legal.authorityText} {legal.authorityName} —
+        <a href={legal.authorityUrl} target="_blank" rel="noreferrer noopener">{legal.authorityUrl.replace('https://', '')}</a>
+      </p>
+    </LegalPage>
+  </main>
+  <Footer artist={artist} navigation={navigation} social={social} footer={footer} legal={legal} />
+</Layout>

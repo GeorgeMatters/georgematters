@@ -7,13 +7,18 @@ interface Props {
   site: Site;
   artist: Artist;
   social: Social;
-  heroImageHref: string;
-  heroImageSrcset: string;
+  heroImageHref?: string;
+  heroImageSrcset?: string;
+  title?: string;
+  description?: string;
+  noindex?: boolean;
   socialImage: string;
   brandLogo: string;
 }
 
-const { site, artist, social, heroImageHref, heroImageSrcset, socialImage, brandLogo } = Astro.props;
+const { site, artist, social, heroImageHref, heroImageSrcset, socialImage, brandLogo, title, description, noindex } = Astro.props;
+const pageTitle = title ? `${title} | ${artist.name}` : site.title;
+const pageDescription = description ?? site.description;
 const abs = (path: string) => new URL(path, site.url).href;
 const imageUrl = abs(socialImage);
 const logoUrl = abs(brandLogo);
@@ -91,29 +96,32 @@ const schemaJson = JSON.stringify(schemaGraph).replace(/</g, '\\u003c');
       />
     )}
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>{site.title}</title>
-    <meta name="description" content={site.description} />
-    <link rel="canonical" href={site.url} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={new URL(Astro.url.pathname, site.url).href} />
 
-    <link
-      rel="preload"
-      as="image"
-      href={heroImageHref}
-      imagesrcset={heroImageSrcset}
-      imagesizes="(max-width: 980px) 100vw, 45vw"
-      fetchpriority="high"
-    />
+    {heroImageHref && (
+      <link
+        rel="preload"
+        as="image"
+        href={heroImageHref}
+        imagesrcset={heroImageSrcset}
+        imagesizes="(max-width: 980px) 100vw, 42vw"
+        fetchpriority="high"
+      />
+    )}
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={site.title} />
-    <meta property="og:description" content={site.description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={site.url} />
     <meta property="og:image" content={imageUrl} />
     <meta property="og:locale" content={site.locale} />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={site.title} />
-    <meta name="twitter:description" content={site.description} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={imageUrl} />
 
     <script type="application/ld+json" set:html={schemaJson} />

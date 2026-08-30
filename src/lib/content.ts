@@ -9,6 +9,19 @@ const iconName = z.enum([
 ]);
 
 const link = z.object({ label: z.string().min(1), href: z.string().min(1) }).strict();
+
+/**
+ * A legally mandated value that must be supplied before the site can build.
+ * Publishing an Impressum containing "TODO: ..." would be worse than having
+ * none, so an unfilled placeholder fails the build rather than shipping.
+ */
+const requiredFact = z
+  .string()
+  .min(1)
+  .refine((v) => !/^TODO\b/i.test(v.trim()), {
+    message:
+      'still a placeholder — supply the real value in content.yaml before building'
+  });
 const cta = z.object({ text: z.string().min(1), href: z.string().min(1) }).strict();
 const imagePath = z.string().regex(/^images\/.+\.(png|jpe?g|webp|avif)$/, 'must be images/<file>.<ext>');
 
@@ -137,6 +150,42 @@ export const contentSchema = z.object({
     credit: z.string().min(1)
   }).strict(),
 
+  legal: z.object({
+    entityName: requiredFact,
+    legalForm: z.string().min(1),
+    street: requiredFact,
+    postalCode: requiredFact,
+    vatId: z.string(),
+    authority: z.string(),
+    chamber: z.string(),
+    activity: z.string().min(1),
+    direction: z.string().min(1),
+    disclaimerHeading: z.string().min(1),
+    disclaimer: z.string().min(1),
+    copyrightHeading: z.string().min(1),
+    copyright: z.string().min(1),
+    privacyIntro: z.string().min(1),
+    hostingHeading: z.string().min(1),
+    hosting: z.string().min(1),
+    cookiesHeading: z.string().min(1),
+    cookies: z.string().min(1),
+    fontsHeading: z.string().min(1),
+    fonts: z.string().min(1),
+    contactHeading: z.string().min(1),
+    contact: z.string().min(1),
+    rightsHeading: z.string().min(1),
+    rights: z.string().min(1),
+    authorityHeading: z.string().min(1),
+    authorityText: z.string().min(1),
+    authorityName: z.string().min(1),
+    authorityUrl: z.string().url(),
+    impressumTitle: z.string().min(1),
+    impressumHref: z.string().min(1),
+    datenschutzTitle: z.string().min(1),
+    datenschutzHref: z.string().min(1),
+    backLabel: z.string().min(1)
+  }).strict(),
+
   social: z.object({ items: z.array(link).min(1) }).strict()
 }).strict();
 
@@ -165,3 +214,4 @@ export type Gallery = Content['gallery'];
 export type ContactContent = Content['contact'];
 export type FooterContent = Content['footer'];
 export type Social = Content['social'];
+export type Legal = Content['legal'];

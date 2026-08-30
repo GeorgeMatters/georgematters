@@ -2,16 +2,18 @@
 import { Image } from 'astro:assets';
 import { resolveImage } from '../lib/images';
 
-import type { Artist, Navigation, Social, FooterContent } from '../lib/content';
+import type { Artist, Navigation, Social, FooterContent, Legal } from '../lib/content';
 
 interface Props {
   artist: Artist;
   navigation: Navigation;
   social: Social;
   footer: FooterContent;
+  legal: Legal;
 }
 
-const { artist, navigation, social, footer } = Astro.props;
+const { artist, navigation, social, footer, legal } = Astro.props;
+const base = import.meta.env.BASE_URL;
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -48,7 +50,11 @@ const year = new Date().getFullYear();
 
   <div class="container footer-bottom">
     <span>© {year} {artist.name}. {footer.rights}</span>
-    <span>{footer.credit}</span>
+    <span class="footer-legal">
+      <a href={`${base}impressum`}>{legal.impressumTitle}</a>
+      <a href={`${base}datenschutz`}>{legal.datenschutzTitle}</a>
+      <span>{footer.credit}</span>
+    </span>
   </div>
 </footer>
 
@@ -109,6 +115,23 @@ const year = new Date().getFullYear();
 
   .footer-links a:hover,
   .footer-links a:focus-visible {
+    color: var(--accent);
+  }
+
+  .footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .footer-legal a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .footer-legal a:hover,
+  .footer-legal a:focus-visible {
     color: var(--accent);
   }
 

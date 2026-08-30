@@ -1,0 +1,106 @@
+---
+import type { Legal } from '../lib/content';
+
+interface Props {
+  legal: Legal;
+  title: string;
+  intro?: string;
+}
+
+const { legal, title, intro } = Astro.props;
+---
+<section class="section legal">
+  <div class="container legal-shell">
+    <a class="legal-back" href={import.meta.env.BASE_URL}>&larr; {legal.backLabel}</a>
+    <h1 class="legal-title">{title}</h1>
+    {intro && <p class="legal-intro">{intro}</p>}
+    <div class="legal-body">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .legal-shell {
+    max-width: 46rem;
+  }
+
+  .legal-back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .legal-back:hover {
+    text-decoration: underline;
+  }
+
+  .legal-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+
+  .legal-intro {
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .legal-body :global(h2) {
+    margin: 2.75rem 0 0;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text);
+  }
+
+  .legal-body :global(p) {
+    margin: 0.85rem 0 0;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .legal-body :global(a) {
+    color: var(--accent);
+  }
+
+  .legal-body :global(dl) {
+    margin: 1rem 0 0;
+    display: grid;
+    grid-template-columns: minmax(9rem, auto) 1fr;
+    gap: 0.55rem 1.5rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+
+  .legal-body :global(dt) {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 600;
+  }
+
+  .legal-body :global(dd) {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 560px) {
+    .legal-body :global(dl) {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+
+    .legal-body :global(dd) {
+      margin-bottom: 0.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import { getImage } from 'astro:assets';
+import { content } from '../lib/content';
+import { resolveImage } from '../lib/images';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LegalPage from '../components/LegalPage.astro';
+
+const { site, artist, social, legal, navigation, footer } = content;
+const socialImage = await getImage({ src: resolveImage(site.image), width: 1200, format: 'jpeg' });
+const brandLogo = await getImage({ src: resolveImage(site.logo), width: 512, format: 'png' });
+const tel = `tel:${artist.phone.replace(/\s/g, '')}`;
+---
+<Layout
+  site={site}
+  artist={artist}
+  social={social}
+  socialImage={socialImage.src}
+  brandLogo={brandLogo.src}
+  title={legal.impressumTitle}
+  description={`Impressum und Offenlegung gemäß §5 ECG und §25 MedienG für ${artist.name}.`}
+>
+  <Header navigation={navigation} logo={site.logo} />
+  <main id="main">
+    <LegalPage legal={legal} title={legal.impressumTitle}>
+      <h2>Medieninhaber und für den Inhalt verantwortlich</h2>
+      <dl>
+        <dt>Name</dt>
+        <dd>{legal.entityName}</dd>
+        <dt>Rechtsform</dt>
+        <dd>{legal.legalForm}</dd>
+        <dt>Anschrift</dt>
+        <dd>{legal.street}<br />{legal.postalCode} {artist.city}<br />{artist.country}</dd>
+        <dt>E-Mail</dt>
+        <dd><a href={`mailto:${artist.email}`}>{artist.email}</a></dd>
+        <dt>Telefon</dt>
+        <dd><a href={tel}>{artist.phone}</a></dd>
+        <dt>Unternehmensgegenstand</dt>
+        <dd>{legal.activity}</dd>
+        {legal.vatId && <dt>UID-Nummer</dt>}
+        {legal.vatId && <dd>{legal.vatId}</dd>}
+        {legal.authority && <dt>Aufsichtsbehörde</dt>}
+        {legal.authority && <dd>{legal.authority}</dd>}
+        {legal.chamber && <dt>Kammerzugehörigkeit</dt>}
+        {legal.chamber && <dd>{legal.chamber}</dd>}
+      </dl>
+
+      <h2>Grundlegende Richtung (§25 MedienG)</h2>
+      <p>{legal.direction}</p>
+
+      <h2>{legal.disclaimerHeading}</h2>
+      <p>{legal.disclaimer}</p>
+
+      <h2>{legal.copyrightHeading}</h2>
+      <p>{legal.copyright}</p>
+
+      <h2>Online-Streitbeilegung</h2>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noreferrer noopener">ec.europa.eu/consumers/odr</a>.
+        Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor
+        einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h2>Datenschutz</h2>
+      <p>
+        Informationen zur Verarbeitung Ihrer Daten finden Sie in der
+        <a href={`${import.meta.env.BASE_URL}datenschutz`}>{legal.datenschutzTitle}erklärung</a>.
+      </p>
+    </LegalPage>
+  </main>
+  <Footer artist={artist} navigation={navigation} social={social} footer={footer} legal={legal} />
+</Layout>
