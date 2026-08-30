@@ -87,7 +87,7 @@ const schemaJson = JSON.stringify(schemaGraph).replace(/</g, '\\u003c');
     {import.meta.env.PROD && (
       <meta
         http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' __CSP_SCRIPT_HASHES__; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+        content="default-src 'self'; script-src 'self' __CSP_SCRIPT_HASHES__; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; manifest-src 'self'"
       />
     )}
     <meta name="referrer" content="strict-origin-when-cross-origin" />

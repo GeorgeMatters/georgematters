@@ -171,10 +171,14 @@ projects:
           href: "https://www.and-i-music.com"
         - label: "YouTube"
           href: "https://www.youtube.com/channel/UCfOYJYdVote88iPwvg70hig"
+    # Hidden until artwork you own is available. The image previously used here
+    # was not present in this repository or on the deployed site, so it has been
+    # removed rather than substituted. Supply a file and set visible: true.
     - name: "Oh, Claire"
+      visible: false
       since: "Heather • 2025"
       description: "Contemporary-Folk Release rund um die Single „Heather“, veröffentlicht am 24. Oktober 2025."
-      image: "images/project-oh-claire.jpg"
+      image: "images/project-george-matters.png"
       links:
         - label: "Artistcamp"
           href: "https://www.artistcamp.com/oh-claire/heather/9008798726578/index.html"
