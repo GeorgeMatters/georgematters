@@ -25,7 +25,14 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-      - run: npm ci
+      # `npm ci` installs strictly from package-lock.json. npm only records
+      # optional platform binaries for the machine that generated the lockfile,
+      # so a lockfile written on macOS contains @img/sharp-darwin-* and no
+      # Linux build. On this runner that makes sharp unavailable and every
+      # Astro image transform fails. `npm install` re-resolves the optional
+      # dependencies for the current platform while still honouring the
+      # locked versions.
+      - run: npm install --no-audit --no-fund
       - name: Validate content and check for hard-coded business data
         run: node scripts/check-no-hardcoded-content.mjs
       - run: npm run build
