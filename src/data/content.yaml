@@ -296,7 +296,7 @@ legal:
   # The four TODO values below are the only facts that cannot be derived from
   # anything else in this repository. The build FAILS while they start with
   # "TODO" so a placeholder Impressum can never be published.
-  entityName: "TODO: voller rechtlicher Name, z. B. Georg Mattersdorfer"
+  entityName: "Georg Mattersdorfer"   # from georg.mattersdorfer@gmail.com + the MATE logo credit "MATTERSDORFER / TEGROVSKY" — please confirm the spelling
   legalForm: "Einzelunternehmen"
   street: "TODO: Straße und Hausnummer"
   postalCode: "9020"   # from the artist's own published footer on georgematters.at
