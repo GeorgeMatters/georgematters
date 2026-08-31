@@ -130,7 +130,6 @@ export const contentSchema = z.object({
     items: z.array(z.object({
       image: imagePath,
       alt: z.string().min(1),
-      caption: z.string().min(1),
       size: z.enum(['standard', 'wide'])
     }).strict()).min(1)
   }).strict(),

@@ -25,7 +25,7 @@ const visibleItems = projects.items.filter((item) => item.visible !== false);
           <Image
             class="project-image"
             src={resolveImage(item.image)}
-            alt={`${item.name} – Projektbild`}
+            alt={item.name}
             widths={[300, 600]}
             sizes="(max-width: 720px) 100vw, 33vw"
             loading="lazy"
