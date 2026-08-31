@@ -1,0 +1,112 @@
+---
+import type { Media as MediaContent } from '../lib/content';
+
+interface Props {
+  media: MediaContent;
+}
+
+const { media } = Astro.props;
+---
+<section class="section media-section" id="media">
+  <div class="container">
+    <div class="media-layout">
+      <div class="section-intro">
+        <div class="eyebrow">{media.kicker}</div>
+        <h2 class="section-title">{media.headline}</h2>
+        <p class="section-copy">{media.subheadline}</p>
+      </div>
+
+      <div class="media-grid" aria-label="Offizielle Media-Profile">
+        {media.items.map((item) => (
+          <a class="media-card panel" href={item.href} target="_blank" rel="noreferrer noopener">
+            <span class="media-platform">{item.platform}</span>
+            <strong>{item.label}</strong>
+            <span>{item.text}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .media-section {
+    padding-top: 0;
+  }
+
+  .media-layout {
+    display: grid;
+    grid-template-columns: minmax(17rem, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+  }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .media-card {
+    display: grid;
+    gap: 0.55rem;
+    min-height: 10.5rem;
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: border-color 200ms ease, transform 200ms ease, background-color 200ms ease;
+  }
+
+  .media-card:hover,
+  .media-card:focus-visible {
+    border-color: var(--accent);
+    background: var(--surface-raised);
+    transform: translateY(-3px);
+  }
+
+  .media-platform {
+    width: fit-content;
+    padding: 0.36rem 0.58rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  .media-card strong {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.1;
+  }
+
+  .media-card span:last-child {
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .media-card:first-child {
+    border-color: rgba(158, 195, 149, 0.58);
+    background:
+      linear-gradient(135deg, rgba(158, 195, 149, 0.14), transparent 42%),
+      var(--surface);
+  }
+
+  @media (max-width: 980px) {
+    .media-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .media-layout .section-intro {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .media-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .media-card {
+      min-height: 0;
+    }
+  }
+</style>

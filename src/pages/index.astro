@@ -10,6 +10,7 @@ import Highlights from '../components/Highlights.astro';
 import Story from '../components/Story.astro';
 import Services from '../components/Services.astro';
 import Projects from '../components/Projects.astro';
+import Media from '../components/Media.astro';
 import Gallery from '../components/Gallery.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
@@ -46,6 +47,7 @@ const brandLogo = await getImage({
     <Story story={content.story} artist={content.artist} />
     <Services services={content.services} />
     <Projects projects={content.projects} />
+    <Media media={content.media} />
     <Gallery gallery={content.gallery} />
     <Contact contact={content.contact} artist={content.artist} social={content.social} />
   </main>

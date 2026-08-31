@@ -9,6 +9,10 @@ const iconName = z.enum([
 ]);
 
 const link = z.object({ label: z.string().min(1), href: z.string().min(1) }).strict();
+const mediaLink = link.extend({
+  platform: z.string().min(1),
+  text: z.string().min(1)
+}).strict();
 
 /**
  * A legally mandated value that must be supplied before the site can build.
@@ -107,8 +111,16 @@ export const contentSchema = z.object({
       since: z.string().min(1),
       description: z.string().min(1),
       image: imagePath,
-      links: z.array(link)
+      links: z.array(link),
+      missingLinks: z.array(z.string().min(1)).optional()
     }).strict()).min(1)
+  }).strict(),
+
+  media: z.object({
+    kicker: z.string().min(1),
+    headline: z.string().min(1),
+    subheadline: z.string().min(1),
+    items: z.array(mediaLink).min(1)
   }).strict(),
 
   gallery: z.object({
@@ -216,6 +228,7 @@ export type Highlights = Content['highlights'];
 export type Story = Content['story'];
 export type Services = Content['services'];
 export type Projects = Content['projects'];
+export type Media = Content['media'];
 export type Gallery = Content['gallery'];
 export type ContactContent = Content['contact'];
 export type FooterContent = Content['footer'];

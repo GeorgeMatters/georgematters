@@ -4,7 +4,7 @@ import { content } from '../lib/content';
 export const GET: APIRoute = ({ site }) => {
   if (!site) throw new Error('astro.config `site` must be set for llms.txt');
   const base = site.href.replace(/\/$/, '');
-  const { artist, services, projects, social, contact } = content;
+  const { artist, services, projects, media, social, contact } = content;
 
   const section = (title: string, links: string[]) =>
     links.length ? `## ${title}\n\n${links.join('\n')}\n` : '';
@@ -20,6 +20,7 @@ export const GET: APIRoute = ({ site }) => {
     section('Projekte', projects.items
       .filter((p) => p.visible !== false)
       .map((p) => `- [${p.name}](${p.links[0]?.href ?? `${base}/#projekte`}): ${p.description}`)),
+    section('Media', media.items.map((m) => `- [${m.label}](${m.href}): ${m.text}`)),
     section('Profile', social.items.map((s) => `- [${s.label}](${s.href}): Offizielles Profil von ${artist.name}`)),
     section('Kontakt', [
       `- [E-Mail](mailto:${artist.email}): ${contact.emailLabel}`,

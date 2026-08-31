@@ -38,6 +38,8 @@ navigation:
       href: "#anlaesse"
     - label: "Projekte"
       href: "#projekte"
+    - label: "Media"
+      href: "#media"
     - label: "Galerie"
       href: "#galerie"
     - label: "Kontakt"
@@ -155,6 +157,9 @@ projects:
           href: "https://www.youtube.com/@K-Roses-Band"
         - label: "Bed Of Roses (Cover)"
           href: "https://www.youtube.com/watch?v=UIiKh4r6tMU"
+      missingLinks:
+        - "Spotify"
+        - "Instagram"
     - name: "G.Matters & S.Delorenzo"
       since: "seit 2014"
       description: "Akustische Gitarre, Stimmen und Kontrabass in einem reduzierten, dichten Duo-Format."
@@ -162,6 +167,9 @@ projects:
       links:
         - label: "Bandcamp"
           href: "https://innenhofkultur.bandcamp.com/track/evas-traveling-song"
+      missingLinks:
+        - "YouTube"
+        - "Spotify"
     - name: "AND_I"
       since: "seit 2020"
       description: "Österreichisches Elektro-Pop Duo mit eigener klanglicher Farbe."
@@ -171,6 +179,9 @@ projects:
           href: "https://www.and-i-music.com"
         - label: "YouTube"
           href: "https://www.youtube.com/channel/UCfOYJYdVote88iPwvg70hig"
+      missingLinks:
+        - "Spotify"
+        - "Instagram"
     # Hidden until artwork you own is available. The image previously used here
     # was not present in this repository or on the deployed site, so it has been
     # removed rather than substituted. Supply a file and set visible: true.
@@ -193,17 +204,55 @@ projects:
       links:
         - label: "Homepage"
           href: "http://www.grantourismo.at/"
+      missingLinks:
+        - "YouTube"
+        - "Spotify"
+        - "Instagram"
     - name: "MATE"
       since: "George & Angi"
       description: "Harmonisches Duo für unterschiedlichste Anlässe und intime Live-Momente."
       image: "images/project-mate.png"
       links: []
+      missingLinks:
+        - "Website"
+        - "YouTube"
+        - "Spotify"
     - name: "Danny and the bad rats"
       visible: false
       since: "Timeless"
       description: "Rock'n'Roll Projekt mit rauer Energie und klassischer Attitüde."
       image: "images/project-badrats.png"
       links: []
+      missingLinks:
+        - "Website"
+        - "YouTube"
+        - "Spotify"
+
+media:
+  kicker: "Media"
+  headline: "George Matters auf Streaming- und Social-Plattformen."
+  subheadline: "Musik hören, Videos ansehen und aktuelle Einblicke verfolgen: die wichtigsten offiziellen Profile sind direkt erreichbar, projektbezogene Lücken sind bei den jeweiligen Formaten markiert."
+  items:
+    - label: "Spotify"
+      platform: "Streaming"
+      text: "Soloprojekt George Matters auf Spotify hören."
+      href: "https://open.spotify.com/intl-de/artist/2AnO6EgvLg4Hg5xFVqpobG"
+    - label: "YouTube"
+      platform: "Video"
+      text: "Live-Videos, Songs und Projektclips ansehen."
+      href: "https://www.youtube.com/@georgematters"
+    - label: "Instagram"
+      platform: "Social"
+      text: "Aktuelle Auftritte, Bilder und kurze Updates verfolgen."
+      href: "https://www.instagram.com/mattersgeorge/"
+    - label: "Apple Music"
+      platform: "Streaming"
+      text: "George Matters im Apple-Music-Katalog öffnen."
+      href: "https://music.apple.com/at/artist/george-matters/1386092521"
+    - label: "Facebook"
+      platform: "Social"
+      text: "Profil und Veranstaltungsupdates auf Facebook besuchen."
+      href: "https://www.facebook.com/georgemattersmusic"
 
 gallery:
   kicker: "Galerie"
