@@ -73,7 +73,6 @@ Do not put content images in `public/` — that bypasses the pipeline.
 | `src/pages/index.astro` | composes the page |
 | `src/pages/404.astro` | not-found page (noindex) |
 | `src/pages/robots.txt.ts` | generated, sitemap path derived |
-| `src/pages/llms.txt.ts` | generated, llmstxt.org format |
 | `src/styles/global.css` | design tokens and shared UI |
 | `scripts/*.mjs` | CI guards |
 

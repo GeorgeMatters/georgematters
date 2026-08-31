@@ -48,14 +48,14 @@ const visibleItems = projects.items.filter((item) => item.visible !== false);
               <span class="project-note">Details auf Anfrage</span>
             )}
 
-            {item.missingLinks && item.missingLinks.length > 0 && (
+            {/*{item.missingLinks && item.missingLinks.length > 0 && (
               <div class="project-missing" aria-label={`Fehlende Links für ${item.name}`}>
-                <span>Gesucht:</span>
+                { <span>Gesucht:</span> }
                 {item.missingLinks.map((label) => (
                   <span>{label}</span>
                 ))}
               </div>
-            )}
+            )*/}
           </div>
         </article>
       ))}
