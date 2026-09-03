@@ -148,18 +148,21 @@ projects:
           href: "https://open.spotify.com/intl-de/artist/2AnO6EgvLg4Hg5xFVqpobG"
         - label: "YouTube"
           href: "https://www.youtube.com/@georgematters"
-    - name: "K-Roses"
-      since: "Country • seit 2026"
-      description: "Österreichisches Country-Kollektiv mit Andrea Ogris, Stefan Delorenzo und George Matters. Handgemachte Live-Musik, inspiriert vom GTA-Radiosender „K-Rose“."
-      image: "images/project-k-roses.webp"
+        - label: "Instagram"
+          href: "https://www.instagram.com/mattersgeorge"
+    - name: “K-Roses”
+      since: “Country • seit 2026”
+      description: “Österreichisches Country-Kollektiv mit Andrea Ogris, Stefan Delorenzo und George Matters. Handgemachte Live-Musik, inspiriert vom GTA-Radiosender K-Rose.”
+      image: “images/project-k-roses.webp”
       links:
-        - label: "YouTube"
-          href: "https://www.youtube.com/@K-Roses-Band"
-        - label: "Bed Of Roses (Cover)"
-          href: "https://www.youtube.com/watch?v=UIiKh4r6tMU"
+        - label: “YouTube”
+          href: “https://www.youtube.com/@K-Roses-Band”
+        - label: “Instagram”
+          href: “https://www.instagram.com/kroses_official”
+        - label: “Bed Of Roses (Cover)”
+          href: “https://www.youtube.com/watch?v=UIiKh4r6tMU”
       missingLinks:
-        - "Spotify"
-        - "Instagram"
+        - “Spotify”
     - name: "G.Matters & S.Delorenzo"
       since: "seit 2014"
       description: "Akustische Gitarre, Stimmen und Kontrabass in einem reduzierten, dichten Duo-Format."
@@ -172,16 +175,17 @@ projects:
         - "Spotify"
     - name: "AND_I"
       since: "seit 2020"
-      description: "Österreichisches Elektro-Pop Duo mit eigener klanglicher Farbe."
+      description: "Österreichisches Indie-/Electro-Pop Duo mit eigener klanglicher Farbe."
       image: "images/project-and-i.png"
       links:
         - label: "Website"
           href: "https://www.and-i-music.com"
         - label: "YouTube"
           href: "https://www.youtube.com/channel/UCfOYJYdVote88iPwvg70hig"
+        - label: "Instagram"
+          href: "https://www.instagram.com/and.i.music"
       missingLinks:
         - "Spotify"
-        - "Instagram"
     - name: "Oh, Claire"
       since: "Indie-Folk • seit 2025"
       description: "Indie-Folk aus Kärnten mit atmosphärischen Aufnahmen und Live-Präsenz auf digitalen Plattformen."
@@ -193,20 +197,23 @@ projects:
           href: "https://www.instagram.com/ohclairemusic"
     - name: "Gran Tourismo"
       since: "Classics"
-      description: "Kärntner Parade-Genuss-Rocker mit Charakter und Spielfreude."
+      description: "Kärntner Parade-Genuss-Rocker mit Charakter und Spielfreude. Live Music aus Klagenfurt."
       image: "images/project-gran-tourismo.png"
       links:
         - label: "Homepage"
           href: "http://www.grantourismo.at/"
+        - label: "Instagram"
+          href: "https://www.instagram.com/gran_tourismo_band"
       missingLinks:
         - "YouTube"
         - "Spotify"
-        - "Instagram"
     - name: "MATE"
       since: "George & Angi"
-      description: "Harmonisches Duo für unterschiedlichste Anlässe und intime Live-Momente."
+      description: "Harmonisches Duo für unterschiedlichste Anlässe und intime Live-Momente. Folk, Pop und jazzy Tunes."
       image: "images/project-mate.png"
-      links: []
+      links:
+        - label: "Instagram"
+          href: "https://www.instagram.com/this_is_mate_music"
       missingLinks:
         - "Website"
         - "YouTube"
