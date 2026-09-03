@@ -182,21 +182,15 @@ projects:
       missingLinks:
         - "Spotify"
         - "Instagram"
-    # Hidden until artwork you own is available. The image previously used here
-    # was not present in this repository or on the deployed site, so it has been
-    # removed rather than substituted. Supply a file and set visible: true.
     - name: "Oh, Claire"
-      visible: false
-      since: "Heather • 2025"
-      description: "Contemporary-Folk Release rund um die Single „Heather“, veröffentlicht am 24. Oktober 2025."
-      image: "images/project-george-matters.png"
+      since: "Indie-Folk • seit 2025"
+      description: "Indie-Folk aus Kärnten mit atmosphärischen Aufnahmen und Live-Präsenz auf digitalen Plattformen."
+      image: "images/project-oh-claire.jpg"
       links:
-        - label: "Artistcamp"
-          href: "https://www.artistcamp.com/oh-claire/heather/9008798726578/index.html"
-        - label: "Artist Search"
-          href: "https://www.artistcamp.com/Product/ArtistSearchResult/?artist=Oh%2C+Claire"
         - label: "YouTube"
-          href: "https://www.youtube.com/playlist?list=OLAK5uy_mj6el4hNdFQiq_ycUsDId-2QcA8Vtvw9M"
+          href: "https://www.youtube.com/watch?v=VNvoJZvRVZ0&list=RDVNvoJZvRVZ0&start_radio=1"
+        - label: "Instagram"
+          href: "https://www.instagram.com/ohclairemusic"
     - name: "Gran Tourismo"
       since: "Classics"
       description: "Kärntner Parade-Genuss-Rocker mit Charakter und Spielfreude."
